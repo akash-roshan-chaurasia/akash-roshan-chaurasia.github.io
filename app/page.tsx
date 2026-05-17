@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Briefcase as BriefcaseIcon, GraduationCap as GraduationCapIcon, Award as AwardIcon, Linkedin as LinkedinIcon, Mail as MailIcon, Phone as PhoneIcon, MapPin as MapPinIcon, Download as DownloadIcon, Share as ShareIcon, FileText as FileTextIcon } from "lucide-react";
+import { Briefcase as BriefcaseIcon, GraduationCap as GraduationCapIcon, Award as AwardIcon, Linkedin as LinkedinIcon, Mail as MailIcon, Phone as PhoneIcon, MapPin as MapPinIcon, Download as DownloadIcon, Share as ShareIcon, FileText as FileTextIcon, Chrome as HomeIcon, File as FileIcon } from "lucide-react";
 import { toast } from "sonner";
 import { formatDistance, format, differenceInYears, differenceInMonths } from "date-fns";
 import { StarRating } from "@/components/ui/star-rating";
@@ -90,6 +90,28 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-background to-muted">
       <div className="max-w-4xl mx-auto p-6 space-y-8">
+        {/* Navigation */}
+        <div className="flex gap-3">
+          <Link href="/">
+            <Button variant="default" size="sm">
+              <HomeIcon className="w-4 h-4 mr-2" />
+              Portfolio
+            </Button>
+          </Link>
+          <Link href="/ats">
+            <Button variant="outline" size="sm">
+              <FileIcon className="w-4 h-4 mr-2" />
+              ATS Resume
+            </Button>
+          </Link>
+          <Link href="/cover">
+            <Button variant="outline" size="sm">
+              <FileTextIcon className="w-4 h-4 mr-2" />
+              Cover Letter
+            </Button>
+          </Link>
+        </div>
+
         {/* Header Section with Action Buttons */}
         <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
           <div className="space-y-4">

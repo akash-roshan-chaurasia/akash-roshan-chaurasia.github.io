@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Download as DownloadIcon, Share as ShareIcon, File as FileIcon } from "lucide-react";
+import { Download as DownloadIcon, Share as ShareIcon, File as FileIcon, Chrome as HomeIcon, FileText as FileTextIcon } from "lucide-react";
 import { toast } from "sonner";
 import { format } from "date-fns";
 import Link from "next/link";
@@ -45,6 +45,28 @@ export default function CoverLetter() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-background to-muted p-6">
       <div className="max-w-3xl mx-auto space-y-8">
+        {/* Navigation */}
+        <div className="flex gap-3 print:hidden">
+          <Link href="/">
+            <Button variant="outline" size="sm">
+              <HomeIcon className="w-4 h-4 mr-2" />
+              Portfolio
+            </Button>
+          </Link>
+          <Link href="/ats">
+            <Button variant="outline" size="sm">
+              <FileIcon className="w-4 h-4 mr-2" />
+              ATS Resume
+            </Button>
+          </Link>
+          <Link href="/cover">
+            <Button variant="default" size="sm">
+              <FileTextIcon className="w-4 h-4 mr-2" />
+              Cover Letter
+            </Button>
+          </Link>
+        </div>
+
         {/* Action Buttons */}
         <div className="flex flex-wrap justify-end gap-2 print:hidden">
           <Button onClick={handleDownload} variant="outline" className="flex-1 sm:flex-none">
