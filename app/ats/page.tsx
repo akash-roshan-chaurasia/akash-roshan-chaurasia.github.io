@@ -1,8 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Download as DownloadIcon } from "lucide-react";
-import { toast } from "sonner";
+import { Download as DownloadIcon, FileText, Chrome as Home } from "lucide-react";
+import Link from "next/link";
 import { differenceInYears, differenceInMonths } from "date-fns";
 
 export default function ATSResume() {
@@ -27,18 +27,32 @@ export default function ATSResume() {
   const totalExperience = calculateYearMonthExperience("2019-01-01");
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white text-black print:bg-white print:text-black">
       <div className="max-w-4xl mx-auto p-8 space-y-6">
-        {/* Download Button */}
-        <div className="flex justify-end print:hidden mb-6">
-          <Button onClick={handleDownload} variant="outline">
+        {/* Navigation and Download Button */}
+        <div className="flex justify-between items-center print:hidden mb-6">
+          <div className="flex gap-2">
+            <Link href="/">
+              <Button variant="outline" size="sm">
+                <Home className="w-4 h-4 mr-2" />
+                Portfolio
+              </Button>
+            </Link>
+            <Link href="/cover">
+              <Button variant="outline" size="sm">
+                <FileText className="w-4 h-4 mr-2" />
+                Cover Letter
+              </Button>
+            </Link>
+          </div>
+          <Button onClick={handleDownload} variant="default">
             <DownloadIcon className="w-4 h-4 mr-2" />
             Download PDF
           </Button>
         </div>
 
         {/* Header */}
-        <div className="text-center space-y-2 border-b pb-6">
+        <div className="text-center space-y-2 border-b border-black pb-6 print:border-black">
           <h1 className="text-3xl font-bold">AKASH ROSHAN CHAURASIA</h1>
           <p className="text-lg font-semibold">Team Lead 2 - Software Developer</p>
           <div className="flex justify-center gap-4 text-sm flex-wrap">
@@ -49,11 +63,11 @@ export default function ATSResume() {
             <span>akashroshanchaurasia@gmail.com</span>
           </div>
           <div className="flex justify-center gap-4 text-sm flex-wrap">
-            <a href="https://www.linkedin.com/in/akash-roshan/" className="text-blue-600 underline">
+            <a href="https://www.linkedin.com/in/akash-roshan/" className="text-blue-600 underline hover:text-blue-800 print:text-blue-600">
               linkedin.com/in/akash-roshan
             </a>
             <span>•</span>
-            <a href="https://github.com/akashrc" className="text-blue-600 underline">
+            <a href="https://github.com/akashrc" className="text-blue-600 underline hover:text-blue-800 print:text-blue-600">
               github.com/akashrc
             </a>
           </div>
@@ -61,16 +75,16 @@ export default function ATSResume() {
 
         {/* Professional Summary */}
         <div className="space-y-2">
-          <h2 className="text-lg font-bold">PROFESSIONAL SUMMARY</h2>
-          <p className="text-sm leading-relaxed">
+          <h2 className="text-lg font-bold text-black">PROFESSIONAL SUMMARY</h2>
+          <p className="text-sm leading-relaxed text-black">
             Team Lead 2 at Real Time Data Services with {totalExperience} of experience in software development. Specialized expertise in disaster recovery, cloud infrastructure, and enterprise-scale system development. Proven track record in leading development teams, mentoring QA professionals, and delivering high-availability solutions. Technical proficiency in Next.js, NestJS, ReactQuery, MySQL, MongoDB, BullMQ, NetApp, Commvault, and OpenStack. Committed to innovative solutions and fostering team growth.
           </p>
         </div>
 
         {/* Technical Skills */}
         <div className="space-y-2">
-          <h2 className="text-lg font-bold">TECHNICAL SKILLS</h2>
-          <div className="grid grid-cols-2 gap-4 text-sm">
+          <h2 className="text-lg font-bold text-black">TECHNICAL SKILLS</h2>
+          <div className="grid grid-cols-2 gap-4 text-sm text-black">
             <div>
               <span className="font-semibold">Frontend:</span> Next.js, React, React Query, Redux, Electron, HTML, CSS, JavaScript, TypeScript
             </div>
@@ -94,18 +108,18 @@ export default function ATSResume() {
 
         {/* Work Experience */}
         <div className="space-y-4">
-          <h2 className="text-lg font-bold">PROFESSIONAL EXPERIENCE</h2>
+          <h2 className="text-lg font-bold text-black">PROFESSIONAL EXPERIENCE</h2>
 
           {/* Team Lead 2 */}
           <div className="space-y-2">
             <div className="flex justify-between items-start">
               <div>
-                <h3 className="font-bold">Team Lead 2 - Software Developer</h3>
-                <p className="text-sm">Real Time Data Services, Gurugram, Haryana, India</p>
+                <h3 className="font-bold text-black">Team Lead 2 - Software Developer</h3>
+                <p className="text-sm text-black">Real Time Data Services, Gurugram, Haryana, India</p>
               </div>
-              <div className="text-sm font-semibold whitespace-nowrap">Oct 2025 - Present</div>
+              <div className="text-sm font-semibold whitespace-nowrap text-black">Oct 2025 - Present</div>
             </div>
-            <ul className="text-sm space-y-1 list-disc list-inside">
+            <ul className="text-sm space-y-1 list-disc list-inside text-black">
               <li>Lead and supervise development and QA teams, providing strategic guidance, mentorship, and technical leadership</li>
               <li>Collaborate with Scrum Master and Product Owners to define project objectives, scope, and deliverables</li>
               <li>Provide senior technical expertise in disaster recovery, firewall, and system scalability for enterprise applications</li>
@@ -121,12 +135,12 @@ export default function ATSResume() {
           <div className="space-y-2">
             <div className="flex justify-between items-start">
               <div>
-                <h3 className="font-bold">Assistant Team Lead - Software Development</h3>
-                <p className="text-sm">Real Time Data Services, Gurugram, Haryana, India</p>
+                <h3 className="font-bold text-black">Assistant Team Lead - Software Development</h3>
+                <p className="text-sm text-black">Real Time Data Services, Gurugram, Haryana, India</p>
               </div>
-              <div className="text-sm font-semibold whitespace-nowrap">Nov 2022 - Oct 2025</div>
+              <div className="text-sm font-semibold whitespace-nowrap text-black">Nov 2022 - Oct 2025</div>
             </div>
-            <ul className="text-sm space-y-1 list-disc list-inside">
+            <ul className="text-sm space-y-1 list-disc list-inside text-black">
               <li>Led and supervised development and QA teams, providing guidance, mentorship, and technical support</li>
               <li>Collaborated with Scrum Master and Product Owners on project objectives and deliverables</li>
               <li>Provided technical expertise and guidance for complex issue resolution and technical challenges</li>
@@ -140,12 +154,12 @@ export default function ATSResume() {
           <div className="space-y-2">
             <div className="flex justify-between items-start">
               <div>
-                <h3 className="font-bold">Software Engineer</h3>
-                <p className="text-sm">Real Time Data Services, Gurugram, Haryana, India</p>
+                <h3 className="font-bold text-black">Software Engineer</h3>
+                <p className="text-sm text-black">Real Time Data Services, Gurugram, Haryana, India</p>
               </div>
-              <div className="text-sm font-semibold whitespace-nowrap">May 2021 - Nov 2022</div>
+              <div className="text-sm font-semibold whitespace-nowrap text-black">May 2021 - Nov 2022</div>
             </div>
-            <ul className="text-sm space-y-1 list-disc list-inside">
+            <ul className="text-sm space-y-1 list-disc list-inside text-black">
               <li>Implemented IVR and broadcast call solutions with inbound/outbound routing capabilities</li>
               <li>Developed webhook integrations and lead list management systems</li>
               <li>Developed customized dial plan flow (CDP) solutions for enterprise customers</li>
@@ -157,12 +171,12 @@ export default function ATSResume() {
           <div className="space-y-2">
             <div className="flex justify-between items-start">
               <div>
-                <h3 className="font-bold">Software Engineer</h3>
-                <p className="text-sm">Velocity Software Solutions Private Limited, Noida, India</p>
+                <h3 className="font-bold text-black">Software Engineer</h3>
+                <p className="text-sm text-black">Velocity Software Solutions Private Limited, Noida, India</p>
               </div>
-              <div className="text-sm font-semibold whitespace-nowrap">Jan 2019 - May 2021</div>
+              <div className="text-sm font-semibold whitespace-nowrap text-black">Jan 2019 - May 2021</div>
             </div>
-            <ul className="text-sm space-y-1 list-disc list-inside">
+            <ul className="text-sm space-y-1 list-disc list-inside text-black">
               <li>Developed key e-commerce modules including Supplier Delivery Management, Order Management, Shipment Processing, and Inventory Control for uksoccershop.com platform</li>
               <li>Led development of multiple e-commerce multi-sites and government survey projects (OOSC)</li>
               <li>Integrated product catalog and order management with Cratejoy platform (geekgearbox.com)</li>
@@ -178,21 +192,21 @@ export default function ATSResume() {
 
         {/* Education */}
         <div className="space-y-2">
-          <h2 className="text-lg font-bold">EDUCATION</h2>
+          <h2 className="text-lg font-bold text-black">EDUCATION</h2>
           <div className="flex justify-between items-start">
             <div>
-              <h3 className="font-bold">Bachelor of Technology (B.Tech) - Computer Science and Engineering</h3>
-              <p className="text-sm">IMS Engineering College, Ghaziabad, India</p>
-              <p className="text-sm">Final Grade: 69%</p>
+              <h3 className="font-bold text-black">Bachelor of Technology (B.Tech) - Computer Science and Engineering</h3>
+              <p className="text-sm text-black">IMS Engineering College, Ghaziabad, India</p>
+              <p className="text-sm text-black">Final Grade: 69%</p>
             </div>
-            <div className="text-sm font-semibold whitespace-nowrap">2015 - 2019</div>
+            <div className="text-sm font-semibold whitespace-nowrap text-black">2015 - 2019</div>
           </div>
         </div>
 
         {/* Certifications */}
         <div className="space-y-2">
-          <h2 className="text-lg font-bold">CERTIFICATIONS</h2>
-          <ul className="text-sm space-y-1">
+          <h2 className="text-lg font-bold text-black">CERTIFICATIONS</h2>
+          <ul className="text-sm space-y-1 text-black">
             <li>• AWS Elastic Disaster Recovery - A Technical Introduction</li>
             <li>• Neural Networks and Deep Learning</li>
             <li>• Intro to Python for Data Science</li>
@@ -201,16 +215,16 @@ export default function ATSResume() {
 
         {/* Core Competencies */}
         <div className="space-y-2">
-          <h2 className="text-lg font-bold">CORE COMPETENCIES</h2>
-          <p className="text-sm">
+          <h2 className="text-lg font-bold text-black">CORE COMPETENCIES</h2>
+          <p className="text-sm text-black">
             Disaster Recovery | System Scalability | Cloud Infrastructure | Team Leadership | Mentorship | Technical Architecture | Production Deployment | High-Availability Systems | Commvault Administration | NetApp Management | API Development | Database Design | E-commerce Solutions | Agile/Scrum | DevOps Practices | Code Review | Problem Solving
           </p>
         </div>
 
         {/* Top Skills */}
         <div className="space-y-2">
-          <h2 className="text-lg font-bold">TOP SKILLS</h2>
-          <p className="text-sm">
+          <h2 className="text-lg font-bold text-black">TOP SKILLS</h2>
+          <p className="text-sm text-black">
             Disaster Recovery, ReactQuery, MySQL, Next.js, NestJS, MongoDB, Docker, Commvault, NetApp Snapmirror, BullMQ, Laravel, Asterisk, System Architecture, Team Leadership
           </p>
         </div>
