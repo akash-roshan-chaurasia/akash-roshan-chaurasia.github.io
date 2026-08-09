@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Download as DownloadIcon, FileText, Chrome as Home } from "lucide-react";
+import { Download as DownloadIcon, FileText, Chrome as Home, Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
 import Link from "next/link";
 import { differenceInYears, differenceInMonths } from "date-fns";
 
@@ -27,212 +27,203 @@ export default function ATSResume() {
   const totalExperience = calculateYearMonthExperience("2019-01-01");
 
   return (
-    <main className="min-h-screen bg-white text-black print:bg-white print:text-black">
-      <div className="max-w-4xl mx-auto p-8 space-y-6">
+    <main className="min-h-screen bg-slate-950 text-slate-100 print:bg-white print:text-black">
+      <div className="max-w-4xl mx-auto p-6 sm:p-8 space-y-6">
         {/* Navigation and Download Button */}
-        <div className="flex justify-between items-center flex-wrap gap-3 print:hidden mb-6">
+        <div className="flex justify-between items-center flex-wrap gap-3 print:hidden mb-6 bg-slate-900/80 p-4 rounded-xl border border-slate-800">
           <div className="flex gap-2 flex-wrap">
             <Link href="/">
-              <Button variant="outline" size="sm">
-                <Home className="w-4 h-4 mr-2" />
+              <Button variant="outline" size="sm" className="bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700">
+                <Home className="w-4 h-4 mr-2 text-cyan-400" />
                 Portfolio
               </Button>
             </Link>
-            <Button variant="default" size="sm" disabled>
-              <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
+            <Button variant="secondary" size="sm" className="bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400">
+              <FileText className="w-4 h-4 mr-2" />
               ATS Resume
             </Button>
             <Link href="/cover">
-              <Button variant="outline" size="sm">
-                <FileText className="w-4 h-4 mr-2" />
+              <Button variant="outline" size="sm" className="bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700">
+                <FileText className="w-4 h-4 mr-2 text-indigo-400" />
                 Cover Letter
               </Button>
             </Link>
           </div>
-          <Button onClick={handleDownload} variant="default">
+          <Button onClick={handleDownload} variant="default" className="bg-cyan-500 text-slate-950 hover:bg-cyan-400 font-semibold">
             <DownloadIcon className="w-4 h-4 mr-2" />
             Download PDF
           </Button>
         </div>
 
-        {/* Header */}
-        <div className="text-center space-y-2 border-b border-black pb-6 print:border-black">
-          <h1 className="text-3xl font-bold">AKASH ROSHAN CHAURASIA</h1>
-          <p className="text-lg font-semibold">Team Lead 2 - Software Developer</p>
-          <div className="flex justify-center gap-4 text-sm flex-wrap">
-            <span>Gurugram, Haryana, India 122016</span>
-            <span>•</span>
-            <span>+91-8802076664</span>
-            <span>•</span>
-            <span>akashroshanchaurasia@gmail.com</span>
-          </div>
-          <div className="flex justify-center gap-4 text-sm flex-wrap">
-            <a href="https://www.linkedin.com/in/akash-roshan/" className="text-blue-600 underline hover:text-blue-800 print:text-blue-600">
-              linkedin.com/in/akash-roshan
-            </a>
-            <span>•</span>
-            <a href="https://github.com/akashrc" className="text-blue-600 underline hover:text-blue-800 print:text-blue-600">
-              github.com/akashrc
-            </a>
-          </div>
-        </div>
+        {/* ATS Resume Sheet Container */}
+        <div className="bg-white text-black p-8 rounded-xl shadow-2xl border border-slate-200 space-y-6 font-sans">
+          {/* Header */}
+          <div className="text-center space-y-2 border-b-2 border-black pb-6">
+            <h1 className="text-3xl font-bold tracking-tight text-black">AKASH ROSHAN CHAURASIA</h1>
+            <p className="text-lg font-semibold text-slate-800">Team Lead 2 — Software Development</p>
+            
+            <div className="flex justify-center gap-4 text-sm flex-wrap text-slate-700 pt-1">
+              <span className="inline-flex items-center gap-1">
+                <MapPin className="w-3.5 h-3.5" /> Gurgaon, Haryana, India 122016
+              </span>
+              <span>•</span>
+              <a href="tel:+918802076664" className="inline-flex items-center gap-1 text-blue-700 hover:underline font-medium">
+                <Phone className="w-3.5 h-3.5" /> +91-8802076664
+              </a>
+              <span>•</span>
+              <a href="mailto:akashroshanchaurasia@gmail.com" className="inline-flex items-center gap-1 text-blue-700 hover:underline font-medium">
+                <Mail className="w-3.5 h-3.5" /> akashroshanchaurasia@gmail.com
+              </a>
+            </div>
 
-        {/* Professional Summary */}
-        <div className="space-y-2">
-          <h2 className="text-lg font-bold text-black">PROFESSIONAL SUMMARY</h2>
-          <p className="text-sm leading-relaxed text-black">
-            Team Lead 2 at Real Time Data Services with {totalExperience} of experience in software development. Specialized expertise in disaster recovery, cloud infrastructure, and enterprise-scale system development. Proven track record in leading development teams, mentoring QA professionals, and delivering high-availability solutions. Technical proficiency in Next.js, NestJS, ReactQuery, MySQL, MongoDB, BullMQ, NetApp, Commvault, and OpenStack. Committed to innovative solutions and fostering team growth.
-          </p>
-        </div>
-
-        {/* Technical Skills */}
-        <div className="space-y-2">
-          <h2 className="text-lg font-bold text-black">TECHNICAL SKILLS</h2>
-          <div className="grid grid-cols-2 gap-4 text-sm text-black">
-            <div>
-              <span className="font-semibold">Frontend:</span> Next.js, React, React Query, Redux, Electron, HTML, CSS, JavaScript, TypeScript
-            </div>
-            <div>
-              <span className="font-semibold">Backend:</span> NestJS, Node.js, Laravel, PHP, Python
-            </div>
-            <div>
-              <span className="font-semibold">Databases:</span> MySQL, MongoDB, PostgreSQL
-            </div>
-            <div>
-              <span className="font-semibold">Cloud & Infrastructure:</span> OpenStack, NetApp Snapmirror, Commvault, Docker, AWS Elastic Disaster Recovery
-            </div>
-            <div>
-              <span className="font-semibold">Message Queues & Tools:</span> BullMQ, Kafka, Asterisk, WHMCS, Sentry
-            </div>
-            <div>
-              <span className="font-semibold">Other:</span> Git, GitLab, Jenkins, CI/CD, VCS, API Development, Webhooks
+            <div className="flex justify-center gap-4 text-sm flex-wrap pt-1 font-mono">
+              <a href="https://www.linkedin.com/in/akash-roshan/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-700 hover:underline">
+                <Linkedin className="w-3.5 h-3.5" /> linkedin.com/in/akash-roshan
+              </a>
+              <span>•</span>
+              <a href="https://github.com/akash-roshan-chaurasia" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-700 hover:underline">
+                <Github className="w-3.5 h-3.5" /> github.com/akash-roshan-chaurasia
+              </a>
             </div>
           </div>
-        </div>
 
-        {/* Work Experience */}
-        <div className="space-y-4">
-          <h2 className="text-lg font-bold text-black">PROFESSIONAL EXPERIENCE</h2>
-
-          {/* Team Lead 2 */}
+          {/* Executive Summary */}
           <div className="space-y-2">
-            <div className="flex justify-between items-start">
+            <h2 className="text-base font-bold text-black border-b border-black pb-1 uppercase tracking-wide">
+              EXECUTIVE &amp; TECHNICAL LEADERSHIP SUMMARY
+            </h2>
+            <p className="text-xs sm:text-sm leading-relaxed text-slate-900">
+              Team Lead 2 at Real Time Data Services with {totalExperience} of progressive software engineering and technical leadership experience. Proven track record in leading developer and QA teams, implementing AI-driven development workflows, establishing architectural code reviews, executing zero-downtime production releases, and building high-availability cloud disaster recovery infrastructure. Proficient in Next.js, NestJS, React Query, MySQL, MongoDB, BullMQ, NetApp Snapmirror, Commvault, and OpenStack cloud environments.
+            </p>
+          </div>
+
+          {/* Technical Skills */}
+          <div className="space-y-2">
+            <h2 className="text-base font-bold text-black border-b border-black pb-1 uppercase tracking-wide">
+              CORE COMPETENCIES &amp; TECHNICAL SKILLS
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-900">
               <div>
-                <h3 className="font-bold text-black">Team Lead 2 - Software Developer</h3>
-                <p className="text-sm text-black">Real Time Data Services, Gurugram, Haryana, India</p>
+                <span className="font-bold">Leadership &amp; Governance:</span> Team Management, Mentorship, AI-Driven Development Workflows, Code Reviews, Release Execution, CI/CD Strategy
               </div>
-              <div className="text-sm font-semibold whitespace-nowrap text-black">Oct 2025 - Present</div>
+              <div>
+                <span className="font-bold">Frontend Architecture:</span> Next.js, React, React Query, Redux, TypeScript, Tailwind CSS, jQuery, Electron
+              </div>
+              <div>
+                <span className="font-bold">Backend &amp; Microservices:</span> NestJS, Node.js, BullMQ, REST APIs, Webhooks, Asterisk PBX
+              </div>
+              <div>
+                <span className="font-bold">Cloud Native &amp; DR:</span> OpenStack Cloud, NetApp Snapmirror, Commvault Disaster Recovery, Docker, Sentry
+              </div>
+              <div>
+                <span className="font-bold">Databases &amp; Storage:</span> MySQL, MongoDB, Volume Auto-Scaling, Automated Backups
+              </div>
+              <div>
+                <span className="font-bold">Open Source:</span> OpenDev Gerrit Code Reviews &amp; Patches (OpenStack Nova), Model Context Protocol (swagger-mcp PR #7)
+              </div>
             </div>
-            <ul className="text-sm space-y-1 list-disc list-inside text-black">
-              <li>Lead and supervise development and QA teams, providing strategic guidance, mentorship, and technical leadership</li>
-              <li>Collaborate with Scrum Master and Product Owners to define project objectives, scope, and deliverables</li>
-              <li>Provide senior technical expertise in disaster recovery, firewall, and system scalability for enterprise applications</li>
-              <li>Troubleshoot complex issues and resolve critical technical challenges in production environments</li>
-              <li>Implement auto-scaling services and automated backup solutions for instance volumes</li>
-              <li>Develop disaster recovery offerings using Commvault with best practices for deployment and NetApp Snapmirror integration</li>
-              <li>Drive technical strategy and architectural decisions for high-availability, enterprise-scale systems</li>
-              <li>Tech Stack: Next.js, NestJS, ReactQuery, Laravel, MySQL, MongoDB, BullMQ, NetApp, Commvault, Sentry, OpenStack</li>
+          </div>
+
+          {/* Work Experience */}
+          <div className="space-y-4">
+            <h2 className="text-base font-bold text-black border-b border-black pb-1 uppercase tracking-wide">
+              PROFESSIONAL EXPERIENCE
+            </h2>
+
+            {/* Team Lead 2 */}
+            <div className="space-y-1.5">
+              <div className="flex justify-between items-start flex-wrap">
+                <div>
+                  <h3 className="font-bold text-black text-sm sm:text-base">Team Lead 2 — Software Development</h3>
+                  <p className="text-xs sm:text-sm text-slate-800 font-semibold">Real Time Data Services (AceCloud), Gurgaon, India</p>
+                </div>
+                <div className="text-xs font-bold text-black">Oct 2025 – Present</div>
+              </div>
+              <ul className="text-xs sm:text-sm space-y-1 list-disc list-inside text-slate-900 leading-relaxed pl-1">
+                <li>Supervise and lead cross-functional development and QA teams, aligning technical milestones with Scrum Masters and Product Owners.</li>
+                <li>Pioneer AI-driven development workflows and automated prompt engineering practices across the team to increase sprint velocity and code quality.</li>
+                <li>Conduct rigorous peer code reviews, enforce architectural quality gates, static analysis checks, and technical debt reduction.</li>
+                <li>Oversee production release management, CI/CD pipeline deployments, risk mitigation, and zero-downtime release executions.</li>
+                <li>Architected customer Disaster Recovery offerings using Commvault best practices and NetApp Snapmirror integration.</li>
+                <li>Implemented OpenStack volume Auto Scaling and Automated Scheduled Volume Backups for cloud compute instances.</li>
+                <li>Tech Stack: Next.js, NestJS, React Query, MySQL, MongoDB, BullMQ, NetApp, Commvault, Sentry, OpenStack.</li>
+              </ul>
+            </div>
+
+            {/* Assistant Team Lead */}
+            <div className="space-y-1.5">
+              <div className="flex justify-between items-start flex-wrap">
+                <div>
+                  <h3 className="font-bold text-black text-sm sm:text-base">Assistant Team Lead — Software Development</h3>
+                  <p className="text-xs sm:text-sm text-slate-800 font-semibold">Real Time Data Services (AceCloud), Gurgaon, India</p>
+                </div>
+                <div className="text-xs font-bold text-black">Nov 2022 – Oct 2025</div>
+              </div>
+              <ul className="text-xs sm:text-sm space-y-1 list-disc list-inside text-slate-900 leading-relaxed pl-1">
+                <li>Guided developer teams, performed code reviews, and resolved complex production infrastructure issues.</li>
+                <li>Built Auto Scaling microservices and scheduled volume backup integrations for OpenStack instances.</li>
+                <li>Formulated enterprise Disaster Recovery architecture using Commvault deployment guidelines.</li>
+                <li>Tech Stack: Next.js, NestJS, React Query, MySQL, MongoDB, Sentry, OpenStack.</li>
+              </ul>
+            </div>
+
+            {/* Software Engineer - Acefone */}
+            <div className="space-y-1.5">
+              <div className="flex justify-between items-start flex-wrap">
+                <div>
+                  <h3 className="font-bold text-black text-sm sm:text-base">Software Engineer</h3>
+                  <p className="text-xs sm:text-sm text-slate-800 font-semibold">Real Time Data Services (Acefone), Gurgaon, India</p>
+                </div>
+                <div className="text-xs font-bold text-black">May 2021 – Oct 2022</div>
+              </div>
+              <ul className="text-xs sm:text-sm space-y-1 list-disc list-inside text-slate-900 leading-relaxed pl-1">
+                <li>Implemented IVR broadcast call solutions with inbound/outbound call routing logic and webhook integrations.</li>
+                <li>Developed Customized Dial Plan flow (CDP) for enterprise call center clients on Asterisk PBX.</li>
+              </ul>
+            </div>
+
+            {/* Software Engineer - Velocity */}
+            <div className="space-y-1.5">
+              <div className="flex justify-between items-start flex-wrap">
+                <div>
+                  <h3 className="font-bold text-black text-sm sm:text-base">Software Developer</h3>
+                  <p className="text-xs sm:text-sm text-slate-800 font-semibold">Velocity Software Solutions, Noida, India</p>
+                </div>
+                <div className="text-xs font-bold text-black">Jan 2019 – May 2021</div>
+              </div>
+              <ul className="text-xs sm:text-sm space-y-1 list-disc list-inside text-slate-900 leading-relaxed pl-1">
+                <li>Engineered core e-commerce modules for uksoccershop.com including Supplier Delivery, Order Processing, and Inventory Sync.</li>
+                <li>Built PDF generation modules (WKHTMLTOPDF, TCPDF) and integrated Amazon MWS bulk feed APIs.</li>
+                <li>Integrated major international shipping carriers including DHL, Spring Global, Norsk Global, and Royal Mail.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Education */}
+          <div className="space-y-2">
+            <h2 className="text-base font-bold text-black border-b border-black pb-1 uppercase tracking-wide">
+              EDUCATION
+            </h2>
+            <div className="flex justify-between items-start text-xs sm:text-sm">
+              <div>
+                <h3 className="font-bold text-black">Bachelor of Technology (B.Tech) — Computer Science &amp; Engineering</h3>
+                <p className="text-slate-800">IMS Engineering College, Ghaziabad, India (Final Grade: 69%)</p>
+              </div>
+              <div className="font-bold text-black whitespace-nowrap">2015 – 2019</div>
+            </div>
+          </div>
+
+          {/* Open Source Evidence */}
+          <div className="space-y-2">
+            <h2 className="text-base font-bold text-black border-b border-black pb-1 uppercase tracking-wide">
+              PUBLIC OPEN SOURCE CONTRIBUTIONS
+            </h2>
+            <ul className="text-xs sm:text-sm space-y-1 text-slate-900">
+              <li><strong className="font-bold">OpenDev Gerrit (OpenStack Nova):</strong> Authored patch &quot;Retry and record fault on network cleanup failure&quot; (Bug #2161972) handling Neutron port retries. Participated in Gerrit code reviews.</li>
+              <li><strong className="font-bold">GitHub (swagger-mcp):</strong> Merged Pull Request #7 (&quot;swaggerV3Support&quot;) adding OpenAPI 3.0 support to Model Context Protocol (MCP) server repository.</li>
+              <li><strong className="font-bold">npm Registry:</strong> Maintainer profile (~akash_roshan) for open-source Node.js package distribution.</li>
             </ul>
           </div>
-
-          {/* Assistant Team Lead */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="font-bold text-black">Assistant Team Lead - Software Development</h3>
-                <p className="text-sm text-black">Real Time Data Services, Gurugram, Haryana, India</p>
-              </div>
-              <div className="text-sm font-semibold whitespace-nowrap text-black">Nov 2022 - Oct 2025</div>
-            </div>
-            <ul className="text-sm space-y-1 list-disc list-inside text-black">
-              <li>Led and supervised development and QA teams, providing guidance, mentorship, and technical support</li>
-              <li>Collaborated with Scrum Master and Product Owners on project objectives and deliverables</li>
-              <li>Provided technical expertise and guidance for complex issue resolution and technical challenges</li>
-              <li>Implemented auto-scaling services and automated backup solutions for instance volumes</li>
-              <li>Developed disaster recovery offerings using Commvault with deployment expertise</li>
-              <li>Tech Stack: Next.js, NestJS, ReactQuery, Laravel, WHMCS, MySQL, MongoDB, Sentry, OpenStack</li>
-            </ul>
-          </div>
-
-          {/* Software Engineer - Acefone */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="font-bold text-black">Software Engineer</h3>
-                <p className="text-sm text-black">Real Time Data Services, Gurugram, Haryana, India</p>
-              </div>
-              <div className="text-sm font-semibold whitespace-nowrap text-black">May 2021 - Nov 2022</div>
-            </div>
-            <ul className="text-sm space-y-1 list-disc list-inside text-black">
-              <li>Implemented IVR and broadcast call solutions with inbound/outbound routing capabilities</li>
-              <li>Developed webhook integrations and lead list management systems</li>
-              <li>Developed customized dial plan flow (CDP) solutions for enterprise customers</li>
-              <li>Resolved customer problems using API dialplan, dynamic dialplan, and webhook technologies</li>
-            </ul>
-          </div>
-
-          {/* Software Engineer - Velocity */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="font-bold text-black">Software Engineer</h3>
-                <p className="text-sm text-black">Velocity Software Solutions Private Limited, Noida, India</p>
-              </div>
-              <div className="text-sm font-semibold whitespace-nowrap text-black">Jan 2019 - May 2021</div>
-            </div>
-            <ul className="text-sm space-y-1 list-disc list-inside text-black">
-              <li>Developed key e-commerce modules including Supplier Delivery Management, Order Management, Shipment Processing, and Inventory Control for uksoccershop.com platform</li>
-              <li>Led development of multiple e-commerce multi-sites and government survey projects (OOSC)</li>
-              <li>Integrated product catalog and order management with Cratejoy platform (geekgearbox.com)</li>
-              <li>Designed and implemented comprehensive Survey Web Application and RESTful API for OOSC</li>
-              <li>Implemented advanced PDF generation solutions using WKHTMLTOPDF, TCPDF, and PHPExcel</li>
-              <li>Integrated Amazon MWS API for bulk product uploads and Google Shopping feed management</li>
-              <li>Implemented shipping integrations with DHL, Spring Global, Norsk Global, and Royal Mail</li>
-              <li>Managed integrations with Amazon Seller Central, Fruugo, and Google Shopping marketplaces</li>
-              <li>Tech Stack: ZenCart, CakePHP, jQuery, MySQL, Git, GitLab, SVN, Jenkins</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Education */}
-        <div className="space-y-2">
-          <h2 className="text-lg font-bold text-black">EDUCATION</h2>
-          <div className="flex justify-between items-start">
-            <div>
-              <h3 className="font-bold text-black">Bachelor of Technology (B.Tech) - Computer Science and Engineering</h3>
-              <p className="text-sm text-black">IMS Engineering College, Ghaziabad, India</p>
-              <p className="text-sm text-black">Final Grade: 69%</p>
-            </div>
-            <div className="text-sm font-semibold whitespace-nowrap text-black">2015 - 2019</div>
-          </div>
-        </div>
-
-        {/* Certifications */}
-        <div className="space-y-2">
-          <h2 className="text-lg font-bold text-black">CERTIFICATIONS</h2>
-          <ul className="text-sm space-y-1 text-black">
-            <li>• AWS Elastic Disaster Recovery - A Technical Introduction</li>
-            <li>• Neural Networks and Deep Learning</li>
-            <li>• Intro to Python for Data Science</li>
-          </ul>
-        </div>
-
-        {/* Core Competencies */}
-        <div className="space-y-2">
-          <h2 className="text-lg font-bold text-black">CORE COMPETENCIES</h2>
-          <p className="text-sm text-black">
-            Disaster Recovery | System Scalability | Cloud Infrastructure | Team Leadership | Mentorship | Technical Architecture | Production Deployment | High-Availability Systems | Commvault Administration | NetApp Management | API Development | Database Design | E-commerce Solutions | Agile/Scrum | DevOps Practices | Code Review | Problem Solving
-          </p>
-        </div>
-
-        {/* Top Skills */}
-        <div className="space-y-2">
-          <h2 className="text-lg font-bold text-black">TOP SKILLS</h2>
-          <p className="text-sm text-black">
-            Disaster Recovery, ReactQuery, MySQL, Next.js, NestJS, MongoDB, Docker, Commvault, NetApp Snapmirror, BullMQ, Laravel, Asterisk, System Architecture, Team Leadership
-          </p>
         </div>
       </div>
     </main>

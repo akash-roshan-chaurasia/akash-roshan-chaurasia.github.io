@@ -4,24 +4,25 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: 'Akash Roshan Chaurasia — Senior Software Engineer & Team Lead 2',
-  description: 'Senior Software Engineer & Team Lead 2 with 7+ years of experience building high-availability cloud infrastructure, disaster recovery automation, Next.js, NestJS, and Open Source systems.',
+  title: 'Akash Roshan Chaurasia — Team Lead 2 (Software Development)',
+  description: 'Team Lead 2 - Software Development with 7+ years of experience leading engineering teams, AI-driven development workflows, release execution, high-availability cloud infrastructure, and disaster recovery automation.',
   keywords: [
     'Akash Roshan Chaurasia',
     'Akash Chaurasia',
-    'Akash Roshan',
-    'Software Engineer',
     'Team Lead 2',
+    'Software Development Team Lead',
+    'Engineering Manager',
+    'Technical Leadership',
+    'AI Driven Development',
+    'Release Management',
     'Next.js Developer',
     'NestJS Developer',
     'Disaster Recovery Automation',
-    'Commvault NetApp',
     'OpenStack',
     'OpenDev Gerrit Contributor',
-    'swagger-mcp',
     'Gurgaon Software Engineer'
   ],
-  authors: [{ name: 'Akash Roshan Chaurasia', url: 'https://github.com/akashrc' }],
+  authors: [{ name: 'Akash Roshan Chaurasia', url: 'https://github.com/akash-roshan-chaurasia' }],
   creator: 'Akash Roshan Chaurasia',
   publisher: 'Akash Roshan Chaurasia',
   metadataBase: new URL('https://akash-roshan-chaurasia.github.io/'),
@@ -32,14 +33,14 @@ export const metadata: Metadata = {
     type: 'profile',
     locale: 'en_US',
     url: 'https://akash-roshan-chaurasia.github.io/',
-    title: 'Akash Roshan Chaurasia — Senior Software Engineer & Team Lead 2',
-    description: 'Senior Software Engineer & Team Lead 2 with 7+ years of experience building high-availability cloud infrastructure, disaster recovery automation, Next.js, NestJS, and Open Source systems.',
+    title: 'Akash Roshan Chaurasia — Team Lead 2 (Software Development)',
+    description: 'Team Lead 2 - Software Development with 7+ years of experience leading engineering teams, AI-driven development workflows, release execution, high-availability cloud infrastructure, and disaster recovery automation.',
     siteName: 'Akash Roshan Chaurasia Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Akash Roshan Chaurasia — Senior Software Engineer & Team Lead 2',
-    description: 'Senior Software Engineer & Team Lead 2 with 7+ years of experience building high-availability cloud infrastructure, disaster recovery automation, Next.js, NestJS, and Open Source systems.',
+    title: 'Akash Roshan Chaurasia — Team Lead 2 (Software Development)',
+    description: 'Team Lead 2 - Software Development with 7+ years of experience leading engineering teams, AI-driven development workflows, release execution, high-availability cloud infrastructure, and disaster recovery automation.',
   },
   robots: {
     index: true,
@@ -76,13 +77,16 @@ const jsonLd = {
       "url": "https://akash-roshan-chaurasia.github.io/",
       "sameAs": [
         "https://github.com/akash-roshan-chaurasia",
-        "https://github.com/akashrc",
         "https://www.linkedin.com/in/akash-roshan/",
         "https://review.opendev.org/q/owner:akashroshanchaurasia@gmail.com",
         "https://www.npmjs.com/~akash_roshan"
       ],
       "knowsAbout": [
-        "Software Engineering",
+        "Engineering Management",
+        "Software Development Leadership",
+        "AI-Driven Development Workflows",
+        "Code Reviews & Quality Standards",
+        "Release Execution & Management",
         "Next.js",
         "NestJS",
         "React",
@@ -95,7 +99,6 @@ const jsonLd = {
         "BullMQ",
         "MySQL",
         "MongoDB",
-        "Laravel",
         "Docker",
         "Model Context Protocol"
       ]
@@ -113,7 +116,7 @@ const jsonLd = {
       "@type": "ProfilePage",
       "@id": "https://akash-roshan-chaurasia.github.io/#webpage",
       "url": "https://akash-roshan-chaurasia.github.io/",
-      "name": "Akash Roshan Chaurasia — Senior Software Engineer & Team Lead 2",
+      "name": "Akash Roshan Chaurasia — Team Lead 2 (Software Development)",
       "mainEntity": {
         "@id": "https://akash-roshan-chaurasia.github.io/#person"
       }
@@ -159,4 +162,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+}

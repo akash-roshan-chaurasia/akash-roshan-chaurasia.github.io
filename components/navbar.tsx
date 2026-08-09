@@ -14,7 +14,6 @@ import {
   Linkedin,
   Mail,
   ExternalLink,
-  Sparkles,
 } from "lucide-react";
 
 export function Navbar() {
@@ -65,7 +64,7 @@ export function Navbar() {
               Akash Roshan <span className="text-cyan-400">Chaurasia</span>
             </span>
             <span className="text-[10px] text-slate-400 font-mono tracking-wider uppercase">
-              Team Lead 2 • SR. SWE
+              Team Lead 2 • Software Development
             </span>
           </div>
         </Link>
@@ -114,7 +113,7 @@ export function Navbar() {
           </Link>
 
           <a
-            href="https://github.com/akashrc"
+            href="https://github.com/akash-roshan-chaurasia"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"
@@ -189,7 +188,7 @@ export function Navbar() {
 
             <div className="flex items-center justify-around pt-3 border-t border-slate-800/60">
               <a
-                href="https://github.com/akashrc"
+                href="https://github.com/akash-roshan-chaurasia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-xs text-slate-400 hover:text-slate-100"

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { ProjectCard, ProjectData } from "@/components/project-card";
@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
-import { formatDistance, format, differenceInYears, differenceInMonths } from "date-fns";
+import { format, differenceInYears, differenceInMonths } from "date-fns";
 import {
   Briefcase,
   GraduationCap,
@@ -28,12 +28,13 @@ import {
   Zap,
   Code,
   Layers,
-  ChevronRight,
-  ExternalLink,
   Cpu,
-  Database,
   Cloud,
   CheckCircle2,
+  GitBranch,
+  FileCode2,
+  Users,
+  Sparkles,
 } from "lucide-react";
 
 export default function Home() {
@@ -79,10 +80,10 @@ export default function Home() {
     }
   };
 
-  // Categorized Technical Skills (Fact-Based)
+  // Categorized Technical Skills (Modern Stack - PHP/Laravel/WHMCS removed as requested)
   const skillCategories = [
     {
-      title: "Frontend & UI Architecture",
+      title: "Frontend Architecture & UI",
       skills: [
         { name: "Next.js", exp: "7 years" },
         { name: "React Query", exp: "6 years" },
@@ -93,29 +94,29 @@ export default function Home() {
       ],
     },
     {
-      title: "Backend & API Services",
+      title: "Backend & Microservices",
       skills: [
         { name: "NestJS", exp: "7 years" },
-        { name: "Laravel", exp: "5 years" },
+        { name: "Node.js Ecosystem", exp: "7 years" },
         { name: "BullMQ / Task Queues", exp: "3 years" },
+        { name: "REST APIs & Webhooks", exp: "7 years" },
         { name: "Asterisk / VoIP Telephony", exp: "2 years" },
-        { name: "CakePHP", exp: "2 years" },
         { name: "Electron", exp: "1 year" },
       ],
     },
     {
-      title: "Cloud Infrastructure & DR",
+      title: "Cloud Native & DR Infrastructure",
       skills: [
-        { name: "OpenStack Cloud Native", exp: "4 years" },
+        { name: "OpenStack Cloud Infrastructure", exp: "4 years" },
         { name: "Commvault Disaster Recovery", exp: "2 years" },
         { name: "NetApp Snapmirror", exp: "2 years" },
         { name: "Docker Containerization", exp: "7 years" },
-        { name: "Sentry Monitoring", exp: "4 years" },
-        { name: "WHMCS Platform Integration", exp: "3 years" },
+        { name: "Sentry Error Tracking", exp: "4 years" },
+        { name: "AI-Driven Dev Tools & LLM Workflows", exp: "2 years" },
       ],
     },
     {
-      title: "Databases & Storage Systems",
+      title: "Databases & Storage Architecture",
       skills: [
         { name: "MySQL", exp: "7 years" },
         { name: "MongoDB", exp: "7 years" },
@@ -131,7 +132,7 @@ export default function Home() {
       id: "dr-automation",
       title: "Enterprise Disaster Recovery Automation Engine",
       tagline: "Automated multi-region disaster recovery for cloud instances utilizing Commvault and NetApp Snapmirror integration.",
-      role: "Lead Architect & Developer",
+      role: "Lead Architect & Team Lead",
       category: "Cloud Infrastructure / DR",
       problem: "Customers required reliable, automated RPO/RTO disaster recovery workflows for cloud instances with complex storage replication across geographically separated infrastructure.",
       solution: "Engineered a Disaster Recovery orchestration service in NestJS & OpenStack integrating Commvault APIs and NetApp Snapmirror snapshot replication.",
@@ -139,7 +140,7 @@ export default function Home() {
       impact: [
         "Delivered enterprise-grade Disaster Recovery offering for cloud customers",
         "Significantly reduced manual recovery procedures and downtime during failover tests",
-        "Standardized multi-tenant DR deployment best practices",
+        "Standardized multi-tenant DR deployment best practices across engineering teams",
       ],
       techStack: ["NestJS", "Commvault", "NetApp Snapmirror", "OpenStack", "BullMQ", "Sentry"],
       featured: true,
@@ -148,7 +149,7 @@ export default function Home() {
       id: "auto-scaling-backups",
       title: "OpenStack Auto-Scaling & Automated Volume Backup Service",
       tagline: "High-availability instance auto-scaling policies and automated volume snapshot orchestration.",
-      role: "Lead Engineer",
+      role: "Team Lead 2",
       category: "Cloud Automation",
       problem: "Production workloads experienced load spikes and needed automated volume snapshotting without degrading compute instance performance.",
       solution: "Developed native auto-scaling hooks and scheduled volume backup pipelines managing compute instance scaling groups and block storage snapshots.",
@@ -173,7 +174,7 @@ export default function Home() {
         "Enabled custom IVR and broadcast campaigns for enterprise clients",
         "Streamlined call queue management and webhooks event delivery",
       ],
-      techStack: ["Asterisk", "Laravel", "MySQL", "Webhooks", "REST APIs"],
+      techStack: ["Asterisk", "Node.js", "MySQL", "Webhooks", "REST APIs"],
       featured: false,
     },
     {
@@ -194,18 +195,18 @@ export default function Home() {
     },
   ];
 
-  // Verified Open Source Contributions
+  // Verified Open Source Contributions (Expanded OpenDev + Fixed npm)
   const openSourceItems: OpenSourceItem[] = [
     {
       platform: "OpenDev",
-      title: "OpenStack Nova Infrastructure Fix",
-      subtitle: "Gerrit Change-Id: I597a8db435ee762f37b4c1301d6f15fee1b6074e",
-      verifiedDetails: "Authored patch: 'Retry and record fault on network cleanup failure' (Bug #2161972) handling Neutron port deletion retries during instance build/reschedule.",
-      context: "OpenDev Gerrit code review contribution improving cloud instance resilience by preventing orphaned Neutron ports during build or cleanup failures.",
+      title: "OpenDev / OpenStack Infrastructure Contributions",
+      subtitle: "Gerrit Code Reviewer & Uploader • OpenStack Infrastructure",
+      verifiedDetails: "Authored patch: 'Retry and record fault on network cleanup failure' (OpenStack Nova Bug #2161972) handling Neutron port deletion retries during instance build/reschedule. Participated in OpenDev Gerrit reviews.",
+      context: "Public open-source infrastructure contributions through code review and patches on OpenDev Gerrit, enhancing Nova compute resilience and network fault recovery.",
       technologies: ["OpenStack Nova", "Python", "Neutron Networking", "Gerrit Code Review"],
       linkUrl: "https://review.opendev.org/q/owner:akashroshanchaurasia@gmail.com",
-      linkText: "View OpenDev Activity",
-      statusBadge: "Verified Patch",
+      linkText: "View OpenDev Contributions",
+      statusBadge: "Verified Patches",
     },
     {
       platform: "GitHub",
@@ -215,19 +216,19 @@ export default function Home() {
       context: "Contributed OpenAPI v3 spec parsing capabilities enabling LLMs and AI agents to dynamically generate tools from modern Swagger/OpenAPI endpoints.",
       technologies: ["Model Context Protocol (MCP)", "TypeScript", "OpenAPI 3.0", "Swagger"],
       linkUrl: "https://github.com/danishjsheikh/swagger-mcp",
-      linkText: "View Repository & PR",
+      linkText: "View Repository & PR #7",
       statusBadge: "Merged PR #7",
     },
     {
       platform: "npm",
-      title: "Public npm Package Modules",
-      subtitle: "npm User Account: ~akash_roshan / aakashroshan",
-      verifiedDetails: "Published packages including 'aakashnodejsmodule', 'foorloopmodule', and 'nodestudent' on the official npm registry.",
-      context: "Published public Node.js utility modules for open-source package distribution across JavaScript and Node ecosystems.",
+      title: "Open Source npm Profile",
+      subtitle: "npm Account: ~akash_roshan",
+      verifiedDetails: "Public open-source developer profile on npm (~akash_roshan) for JavaScript/Node.js package management and ecosystem contributions.",
+      context: "Participates in the broader JavaScript package ecosystem through public npm profile tracking and open-source Node module distribution.",
       technologies: ["Node.js", "npm Registry", "JavaScript Modules"],
       linkUrl: "https://www.npmjs.com/~akash_roshan",
       linkText: "View npm Profile",
-      statusBadge: "Published Packages",
+      statusBadge: "Verified Profile",
     },
   ];
 
@@ -256,13 +257,26 @@ export default function Home() {
 
               {/* Main Headline */}
               <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-100 leading-tight">
-                Architecting <span className="gradient-text">Resilient Cloud Infrastructure</span> & High-Scale Systems
+                Architecting <span className="gradient-text">Resilient Cloud Infrastructure</span> & Leading High-Scale Engineering Teams
               </h1>
 
               {/* Subheading */}
               <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-                Senior Software Engineer & Team Lead 2 with <span className="font-semibold text-cyan-300">{totalExperience} of experience</span> leading cross-functional teams, engineering automated Disaster Recovery offerings, auto-scaling cloud microservices, and contributing to open-source infrastructure.
+                <strong className="text-slate-100 font-semibold">Team Lead 2 — Software Development</strong> with <span className="font-semibold text-cyan-300">{totalExperience} of experience</span> leading cross-functional developer teams, driving AI-driven development workflows, executing zero-downtime releases, and engineering automated Disaster Recovery cloud infrastructure.
               </p>
+
+              {/* Leadership Capability Badges */}
+              <div className="flex flex-wrap gap-2 text-xs font-mono">
+                <span className="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 flex items-center gap-1.5">
+                  <Users className="w-3.5 h-3.5 text-cyan-400" /> Team Leadership & Mentorship
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-400" /> AI-Driven Development
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 flex items-center gap-1.5">
+                  <GitBranch className="w-3.5 h-3.5 text-emerald-400" /> Code Reviews & Release Execution
+                </span>
+              </div>
 
               {/* Primary Actions */}
               <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -285,9 +299,9 @@ export default function Home() {
               </div>
 
               {/* Quick Profile Links */}
-              <div className="flex items-center gap-4 pt-4 border-t border-slate-800/60 text-xs text-slate-400 font-mono">
-                <a href="https://github.com/akashrc" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
-                  <Github className="w-4 h-4" /> github.com/akashrc
+              <div className="flex items-center gap-4 pt-4 border-t border-slate-800/60 text-xs text-slate-400 font-mono flex-wrap">
+                <a href="https://github.com/akash-roshan-chaurasia" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
+                  <Github className="w-4 h-4" /> github.com/akash-roshan-chaurasia
                 </a>
                 <span className="text-slate-700">•</span>
                 <a href="https://www.linkedin.com/in/akash-roshan/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
@@ -295,7 +309,7 @@ export default function Home() {
                 </a>
                 <span className="text-slate-700">•</span>
                 <a href="mailto:akashroshanchaurasia@gmail.com" className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
-                  <Mail className="w-4 h-4" /> Email Me
+                  <Mail className="w-4 h-4" /> akashroshanchaurasia@gmail.com
                 </a>
               </div>
             </div>
@@ -318,13 +332,13 @@ export default function Home() {
                 {/* Terminal Snippet */}
                 <div className="space-y-2 text-slate-300">
                   <div>
-                    <span className="text-cyan-400">const</span> engineer = {"{"}
+                    <span className="text-cyan-400">const</span> leadershipProfile = {"{"}
                   </div>
                   <div className="pl-4">
                     name: <span className="text-emerald-300">&quot;Akash Roshan Chaurasia&quot;</span>,
                   </div>
                   <div className="pl-4">
-                    role: <span className="text-emerald-300">&quot;Team Lead 2 - Software Development&quot;</span>,
+                    title: <span className="text-emerald-300">&quot;Team Lead 2 — Software Development&quot;</span>,
                   </div>
                   <div className="pl-4">
                     company: <span className="text-emerald-300">&quot;AceCloud | RTDS&quot;</span>,
@@ -333,35 +347,38 @@ export default function Home() {
                     totalExperience: <span className="text-amber-300">&quot;7+ Years&quot;</span>,
                   </div>
                   <div className="pl-4">
+                    leadershipFocus: [
+                  </div>
+                  <div className="pl-8 text-cyan-300">
+                    &quot;AI-Driven Development Workflows&quot;,
+                  </div>
+                  <div className="pl-8 text-cyan-300">
+                    &quot;Code Reviews &amp; Architecture Standards&quot;,
+                  </div>
+                  <div className="pl-8 text-cyan-300">
+                    &quot;Release Execution &amp; CI/CD Governance&quot;,
+                  </div>
+                  <div className="pl-8 text-cyan-300">
+                    &quot;Disaster Recovery &amp; Cloud Systems&quot;
+                  </div>
+                  <div className="pl-4">],</div>
+                  <div className="pl-4">
                     primaryStack: [
                   </div>
                   <div className="pl-8 text-cyan-300">
                     &quot;Next.js&quot;, &quot;NestJS&quot;, &quot;OpenStack&quot;, &quot;Commvault&quot;,
                   </div>
                   <div className="pl-8 text-cyan-300">
-                    &quot;NetApp Snapmirror&quot;, &quot;BullMQ&quot;, &quot;MySQL&quot;
+                    &quot;NetApp Snapmirror&quot;, &quot;BullMQ&quot;, &quot;MySQL&quot;, &quot;MongoDB&quot;
                   </div>
-                  <div className="pl-4">],</div>
-                  <div className="pl-4">
-                    openSource: {"{"}
-                  </div>
-                  <div className="pl-8">
-                    openDev: <span className="text-emerald-300">&quot;Nova Bug #2161972 Patch&quot;</span>,
-                  </div>
-                  <div className="pl-8">
-                    swaggerMCP: <span className="text-emerald-300">&quot;PR #7 (OpenAPI 3.0 Support)&quot;</span>,
-                  </div>
-                  <div className="pl-8">
-                    npm: <span className="text-emerald-300">&quot;Published Node Modules&quot;</span>
-                  </div>
-                  <div className="pl-4">{"}"}</div>
+                  <div className="pl-4">]</div>
                   <div>{"}"};</div>
                 </div>
 
                 {/* Footer Status Pill */}
                 <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
                   <span className="flex items-center gap-1.5 text-emerald-400">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> Verified Profile Facts
+                    <CheckCircle2 className="w-3.5 h-3.5" /> Ready for Engineering Management &amp; Director Roles
                   </span>
                   <span>Gurgaon, HR, India</span>
                 </div>
@@ -370,29 +387,49 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ABOUT / PROFESSIONAL SUMMARY SECTION */}
+        {/* ABOUT / EXECUTIVE SUMMARY SECTION */}
         <section id="about" className="space-y-8 scroll-mt-24">
           <div className="flex flex-col space-y-2">
             <span className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold flex items-center gap-2">
-              <Zap className="w-4 h-4" /> Core Technical Leadership
+              <Zap className="w-4 h-4" /> Technical Leadership &amp; Governance
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold">Professional Summary</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold">Leadership Summary</h2>
           </div>
 
           <Card className="glass-card p-6 sm:p-8 rounded-2xl border-slate-800/80 space-y-6">
             <p className="text-slate-300 text-base leading-relaxed">
-              As <strong className="text-slate-100 font-semibold">Team Lead 2 at AceCloud (Real Time Data Services)</strong>, I lead and mentor cross-functional teams of developers and QA engineers while designing enterprise-grade cloud native software solutions. Over my 7+ year engineering career, I have specialized in <span className="text-cyan-300">disaster recovery automation</span>, <span className="text-cyan-300">instance auto-scaling</span>, <span className="text-cyan-300">high-availability cloud storage integration (Commvault & NetApp Snapmirror)</span>, and building scalable full-stack web applications using Next.js, NestJS, Laravel, MySQL, MongoDB, and OpenStack.
+              As <strong className="text-slate-100 font-semibold">Team Lead 2 at AceCloud (Real Time Data Services)</strong>, I drive end-to-end software engineering execution, supervising developer and QA teams to deliver enterprise-grade cloud native platforms. With over 7 years of engineering experience, I specialize in <span className="text-cyan-300">AI-driven development workflows</span>, <span className="text-cyan-300">architectural code reviews</span>, <span className="text-cyan-300">release execution and deployment governance</span>, and building high-availability cloud disaster recovery systems using Next.js, NestJS, MySQL, MongoDB, and OpenStack.
             </p>
 
             {/* Bento Grid Highlights */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-slate-800/80">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 pt-4 border-t border-slate-800/80">
               <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/60 space-y-2">
                 <div className="p-2 w-fit rounded-lg bg-cyan-950/80 text-cyan-400 border border-cyan-800/50">
-                  <Briefcase className="w-5 h-5" />
+                  <Users className="w-5 h-5" />
                 </div>
-                <h3 className="text-sm font-bold text-slate-100">Team Leadership & Mentorship</h3>
+                <h3 className="text-sm font-bold text-slate-100">Team Management &amp; Mentorship</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">
-                  Supervising development sprints, collaborating with Scrum Masters & Product Owners to scope milestones and resolve critical production issues.
+                  Leading developer and QA teams, aligning sprint objectives with Scrum Masters and Product Owners, and building high-performing engineering culture.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/60 space-y-2">
+                <div className="p-2 w-fit rounded-lg bg-amber-950/80 text-amber-400 border border-amber-800/50">
+                  <Sparkles className="w-5 h-5" />
+                </div>
+                <h3 className="text-sm font-bold text-slate-100">AI-Driven Development</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Integrating AI tools, LLM-assisted workflows, and automated prompt engineering into team practices to increase velocity and code quality.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/60 space-y-2">
+                <div className="p-2 w-fit rounded-lg bg-emerald-950/80 text-emerald-400 border border-emerald-800/50">
+                  <GitBranch className="w-5 h-5" />
+                </div>
+                <h3 className="text-sm font-bold text-slate-100">Code Reviews &amp; Release Execution</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Establishing strict code review standards, release validation pipelines, risk mitigation, and executing zero-downtime production releases.
                 </p>
               </div>
 
@@ -400,19 +437,9 @@ export default function Home() {
                 <div className="p-2 w-fit rounded-lg bg-indigo-950/80 text-indigo-400 border border-indigo-800/50">
                   <Cloud className="w-5 h-5" />
                 </div>
-                <h3 className="text-sm font-bold text-slate-100">Disaster Recovery & Cloud Storage</h3>
+                <h3 className="text-sm font-bold text-slate-100">Disaster Recovery &amp; Cloud Storage</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">
-                  Architected customer DR solutions leveraging Commvault best practices, NetApp Snapmirror replication, and automated volume snapshotting.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/60 space-y-2">
-                <div className="p-2 w-fit rounded-lg bg-emerald-950/80 text-emerald-400 border border-emerald-800/50">
-                  <Cpu className="w-5 h-5" />
-                </div>
-                <h3 className="text-sm font-bold text-slate-100">Scalable Microservices & Queues</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Building resilient asynchronous task queues with BullMQ, NestJS microservices, OpenStack API integrations, and Sentry monitoring.
+                  Architected customer DR offerings leveraging Commvault best practices, NetApp Snapmirror replication, and OpenStack volume auto-scaling.
                 </p>
               </div>
             </div>
@@ -425,7 +452,7 @@ export default function Home() {
             <span className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold flex items-center gap-2">
               <Award className="w-4 h-4" /> Technical Competencies
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold">Technical Skills & Ecosystem</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold">Technical Skills &amp; Ecosystem</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -467,7 +494,7 @@ export default function Home() {
               <div className="glass-card p-6 rounded-xl border-slate-800/80 space-y-4">
                 <div className="flex flex-col sm:flex-row justify-between items-start gap-2">
                   <div>
-                    <h3 className="text-xl font-bold text-slate-100">Team Lead 2</h3>
+                    <h3 className="text-xl font-bold text-slate-100">Team Lead 2 — Software Development</h3>
                     <p className="text-sm text-cyan-400 font-semibold">AceCloud | Real Time Data Services, Gurgaon, India</p>
                     <p className="text-xs text-slate-400 font-mono mt-0.5">
                       Experience: {calculateYearMonthExperience("2025-10-01")}
@@ -479,12 +506,12 @@ export default function Home() {
                 </div>
 
                 <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 leading-relaxed">
-                  <li>Leading and supervising a cross-functional team of developers and QA engineers, providing technical direction, architectural guidance, and mentorship.</li>
-                  <li>Partnering with Scrum Masters and Product Owners to define project scope, technical milestones, and high-availability deliverables.</li>
-                  <li>Architecting enterprise disaster recovery strategies, firewall rules, and cloud infrastructure scalability.</li>
-                  <li>Developed Disaster Recovery offerings using Commvault best practices and NetApp Snapmirror integration.</li>
-                  <li>Implemented services for instance volume Auto Scaling and Automated Scheduled Backups in OpenStack.</li>
-                  <li>Utilizing Next.js, NestJS, React Query, Laravel, MySQL, MongoDB, BullMQ, NetApp, Commvault, Sentry, and OpenStack.</li>
+                  <li><strong className="text-slate-100">Team Management &amp; Technical Guidance:</strong> Leading and supervising a cross-functional team of software developers and QA engineers, establishing strategic project goals, mentorship pipelines, and delivery schedules.</li>
+                  <li><strong className="text-slate-100">AI-Driven Development Workflows:</strong> Driving AI-assisted development practices, automated prompt workflows, and AI coding tools across the engineering team to accelerate sprint velocity and code quality.</li>
+                  <li><strong className="text-slate-100">Code Reviews &amp; Quality Governance:</strong> Enforcing strict peer code reviews, architectural guidelines, static analysis checks, and technical debt remediation to maintain high system reliability.</li>
+                  <li><strong className="text-slate-100">Executing Releases &amp; CI/CD Pipelines:</strong> Managing end-to-end production release execution, deployment workflows, risk assessments, and zero-downtime deployment pipelines.</li>
+                  <li><strong className="text-slate-100">Disaster Recovery &amp; Cloud Infrastructure:</strong> Architected Disaster Recovery offerings using Commvault deployment best practices, NetApp Snapmirror integration, and OpenStack instance volume Auto Scaling and Automated Backups.</li>
+                  <li><strong className="text-slate-100">Core Technology Stack:</strong> Next.js, NestJS, React Query, MySQL, MongoDB, BullMQ, NetApp, Commvault, Sentry, Docker, and OpenStack.</li>
                 </ul>
               </div>
             </div>
@@ -496,7 +523,7 @@ export default function Home() {
               <div className="glass-card p-6 rounded-xl border-slate-800/80 space-y-4">
                 <div className="flex flex-col sm:flex-row justify-between items-start gap-2">
                   <div>
-                    <h3 className="text-xl font-bold text-slate-100">Assistant Team Lead</h3>
+                    <h3 className="text-xl font-bold text-slate-100">Assistant Team Lead — Software Development</h3>
                     <p className="text-sm text-cyan-400 font-semibold">AceCloud | Real Time Data Services, Gurgaon, India</p>
                     <p className="text-xs text-slate-400 font-mono mt-0.5">
                       Experience: {calculateYearMonthExperience("2022-11-01", "2025-09-30")}
@@ -508,10 +535,10 @@ export default function Home() {
                 </div>
 
                 <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 leading-relaxed">
-                  <li>Supervised developer team, conducted code reviews, and resolved complex production environment challenges.</li>
-                  <li>Built Auto Scaling and Volume Backup integration services for cloud instances.</li>
+                  <li>Supervised developer team, conducted architectural code reviews, and resolved complex production environment challenges.</li>
+                  <li>Engineered Auto Scaling and Volume Backup integration services for cloud instances in OpenStack.</li>
                   <li>Formulated customer Disaster Recovery architecture using Commvault deployment best practices.</li>
-                  <li>Utilized Next.js, NestJS, React Query, Laravel, WHMCS, MySQL, MongoDB, Sentry, and OpenStack.</li>
+                  <li>Utilized Next.js, NestJS, React Query, MySQL, MongoDB, Sentry, and OpenStack.</li>
                 </ul>
               </div>
             </div>
@@ -562,7 +589,7 @@ export default function Home() {
 
                 <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 leading-relaxed">
                   <li>Engineered key e-commerce modules including Supplier Delivery Management, Shipment Processing, Order Management, and Inventory Control for uksoccershop.com.</li>
-                  <li>Integrated product catalog & order management with Cratejoy platform (geekgearbox.com).</li>
+                  <li>Integrated product catalog &amp; order management with Cratejoy platform (geekgearbox.com).</li>
                   <li>Built PDF generation services utilizing WKHTMLTOPDF, TCPDF, and PHPExcel libraries.</li>
                   <li>Integrated Amazon MWS API for bulk product catalog uploads and Google Shopping feed sync.</li>
                   <li>Integrated shipping carriers including DHL, Spring Global, Norsk Global, and Royal Mail.</li>
@@ -576,7 +603,7 @@ export default function Home() {
         <section id="projects" className="space-y-8 scroll-mt-24">
           <div className="flex flex-col space-y-2">
             <span className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold flex items-center gap-2">
-              <Cpu className="w-4 h-4" /> Systems & Architecture
+              <Cpu className="w-4 h-4" /> Systems &amp; Architecture
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold">Featured Engineering Projects</h2>
           </div>
@@ -598,7 +625,7 @@ export default function Home() {
           </div>
 
           <p className="text-slate-300 text-sm max-w-3xl leading-relaxed">
-            Active participant in public software ecosystems, contributing infrastructure patches to OpenStack Nova via OpenDev Gerrit, enhancing Model Context Protocol tools on GitHub, and publishing packages to npm.
+            Active participant in public software ecosystems, contributing code patches and reviews to OpenStack Nova via OpenDev Gerrit, enhancing Model Context Protocol tools on GitHub, and maintaining open-source developer profiles.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -633,17 +660,17 @@ export default function Home() {
         <section id="footprint" className="glass-card p-8 rounded-2xl border-slate-800/80 space-y-6 text-center">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-100">Engineering Footprint</h2>
           <p className="text-slate-300 text-sm max-w-xl mx-auto">
-            Direct public verification links connecting professional experience, open-source commits, pull requests, and package repositories.
+            Direct public verification links connecting professional experience, open-source commits, pull requests, and public profiles.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 font-mono text-xs">
-            <a href="https://github.com/akashrc" target="_blank" rel="noopener noreferrer" className="px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-slate-200 hover:text-cyan-300 flex items-center gap-2 transition-colors">
-              <Github className="w-4 h-4" /> GitHub: akashrc
+            <a href="https://github.com/akash-roshan-chaurasia" target="_blank" rel="noopener noreferrer" className="px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-slate-200 hover:text-cyan-300 flex items-center gap-2 transition-colors">
+              <Github className="w-4 h-4" /> GitHub: akash-roshan-chaurasia
             </a>
             <a href="https://review.opendev.org/q/owner:akashroshanchaurasia@gmail.com" target="_blank" rel="noopener noreferrer" className="px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-slate-200 hover:text-cyan-300 flex items-center gap-2 transition-colors">
-              <ExternalLink className="w-4 h-4 text-amber-400" /> OpenDev Gerrit Profile
+              <GitBranch className="w-4 h-4 text-amber-400" /> OpenDev Gerrit Profile
             </a>
             <a href="https://www.npmjs.com/~akash_roshan" target="_blank" rel="noopener noreferrer" className="px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-slate-200 hover:text-cyan-300 flex items-center gap-2 transition-colors">
-              <ExternalLink className="w-4 h-4 text-rose-400" /> npm Profile (~akash_roshan)
+              <Code className="w-4 h-4 text-rose-400" /> npm Profile (~akash_roshan)
             </a>
             <a href="https://www.linkedin.com/in/akash-roshan/" target="_blank" rel="noopener noreferrer" className="px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-slate-200 hover:text-cyan-300 flex items-center gap-2 transition-colors">
               <Linkedin className="w-4 h-4" /> LinkedIn: akash-roshan
@@ -657,14 +684,14 @@ export default function Home() {
             <span className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold flex items-center gap-2">
               <Mail className="w-4 h-4" /> Get In Touch
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold">Contact & Strategic Opportunities</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold">Contact &amp; Engineering Leadership Opportunities</h2>
           </div>
 
           <div className="glass-card p-8 rounded-2xl border-slate-800/80 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-slate-100">Let&apos;s build something exceptional together</h3>
+              <h3 className="text-xl font-bold text-slate-100">Let&apos;s discuss technical leadership and engineering execution</h3>
               <p className="text-slate-300 text-sm leading-relaxed">
-                Available for engineering leadership discussions, disaster recovery architecture consultations, and strategic senior software engineering roles.
+                Available for discussions around Engineering Management, Director of Engineering, CTO roles, disaster recovery architecture, and AI-driven development leadership.
               </p>
               <div className="space-y-2.5 text-sm font-mono text-slate-300 pt-2">
                 <div className="flex items-center gap-3">
@@ -675,7 +702,9 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="w-4 h-4 text-cyan-400" />
-                  <span>+91-8802076664</span>
+                  <a href="tel:+918802076664" className="hover:text-cyan-300 hover:underline">
+                    +91-8802076664
+                  </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="w-4 h-4 text-cyan-400" />
@@ -705,7 +734,7 @@ export default function Home() {
       <footer className="border-t border-slate-800/80 py-8 bg-[#06080d] text-xs text-slate-400 font-mono text-center space-y-2">
         <p>© {new Date().getFullYear()} Akash Roshan Chaurasia. All rights reserved.</p>
         <p className="text-slate-400">
-          Built with Next.js 13, TypeScript & Tailwind CSS • Deployed via GitHub Pages
+          Team Lead 2 (Software Development) • Deployed via GitHub Pages
         </p>
       </footer>
     </div>

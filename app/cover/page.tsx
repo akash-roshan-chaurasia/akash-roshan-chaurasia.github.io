@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Download as DownloadIcon, Share as ShareIcon, File as FileIcon, Chrome as HomeIcon, FileText as FileTextIcon } from "lucide-react";
+import { Download as DownloadIcon, Share as ShareIcon, FileCode2 as FileIcon, Chrome as HomeIcon, FileText as FileTextIcon, Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
 import { toast } from "sonner";
 import { format } from "date-fns";
 import Link from "next/link";
@@ -21,7 +21,7 @@ export default function CoverLetter() {
       if (isMobile && navigator.share) {
         try {
           await navigator.share({
-            title: 'Akash Roshan Chaurasia - Cover Letter',
+            title: "Akash Roshan Chaurasia - Executive Cover Letter",
             url: window.location.href
           });
         } catch (error: any) {
@@ -43,118 +43,119 @@ export default function CoverLetter() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-background to-muted p-6">
-      <div className="max-w-3xl mx-auto space-y-8">
-        {/* Navigation */}
-        <div className="flex gap-3 print:hidden">
-          <Link href="/">
-            <Button variant="outline" size="sm">
-              <HomeIcon className="w-4 h-4 mr-2" />
-              Portfolio
-            </Button>
-          </Link>
-          <Link href="/ats">
-            <Button variant="outline" size="sm">
-              <FileIcon className="w-4 h-4 mr-2" />
-              ATS Resume
-            </Button>
-          </Link>
-          <Link href="/cover">
-            <Button variant="default" size="sm">
+    <main className="min-h-screen bg-slate-950 text-slate-100 p-6 print:bg-white print:text-black">
+      <div className="max-w-4xl mx-auto space-y-8">
+        {/* Navigation Bar */}
+        <div className="flex gap-3 print:hidden bg-slate-900/80 p-4 rounded-xl border border-slate-800 justify-between items-center flex-wrap">
+          <div className="flex gap-2 flex-wrap">
+            <Link href="/">
+              <Button variant="outline" size="sm" className="bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700">
+                <HomeIcon className="w-4 h-4 mr-2 text-cyan-400" />
+                Portfolio
+              </Button>
+            </Link>
+            <Link href="/ats">
+              <Button variant="outline" size="sm" className="bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700">
+                <FileIcon className="w-4 h-4 mr-2 text-cyan-400" />
+                ATS Resume
+              </Button>
+            </Link>
+            <Button variant="secondary" size="sm" className="bg-indigo-500 text-slate-950 font-bold hover:bg-indigo-400">
               <FileTextIcon className="w-4 h-4 mr-2" />
               Cover Letter
             </Button>
-          </Link>
-        </div>
+          </div>
 
-        {/* Action Buttons */}
-        <div className="flex flex-wrap justify-end gap-2 print:hidden">
-          <Button onClick={handleDownload} variant="outline" className="flex-1 sm:flex-none">
-            <DownloadIcon className="w-4 h-4 mr-2" />
-            Download PDF
-          </Button>
-          <Button onClick={handleShare} variant="outline" className="flex-1 sm:flex-none">
-            <ShareIcon className="w-4 h-4 mr-2" />
-            Share
-          </Button>
-          <Link href="/" className="flex-1 sm:flex-none">
-            <Button variant="outline" className="w-full">
-              <FileIcon className="w-4 h-4 mr-2" />
-              Resume
+          <div className="flex gap-2">
+            <Button onClick={handleDownload} variant="default" className="bg-cyan-500 text-slate-950 hover:bg-cyan-400 font-semibold">
+              <DownloadIcon className="w-4 h-4 mr-2" />
+              Download PDF
             </Button>
-          </Link>
+            <Button onClick={handleShare} variant="outline" className="bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700">
+              <ShareIcon className="w-4 h-4 mr-2 text-cyan-400" />
+              Share
+            </Button>
+          </div>
         </div>
 
-        <Card className="p-8 space-y-6">
+        {/* Cover Letter Sheet */}
+        <Card className="bg-white text-black p-8 sm:p-10 space-y-6 shadow-2xl border border-slate-200 font-sans">
           {/* Header */}
-          <div className="space-y-4">
-            <h1 className="text-3xl font-bold">Akash Roshan Chaurasia</h1>
-            <div className="text-muted-foreground">
-              <p>Gurgaon, India 122016</p>
-              <p>+91-8802076664</p>
-              <p>akashroshanchaurasia@gmail.com</p>
+          <div className="space-y-4 border-b-2 border-black pb-6">
+            <h1 className="text-3xl font-bold tracking-tight text-black">AKASH ROSHAN CHAURASIA</h1>
+            <p className="text-lg font-semibold text-slate-800">Team Lead 2 — Software Development</p>
+            
+            <div className="flex flex-wrap gap-4 text-sm text-slate-700 pt-1">
+              <span className="inline-flex items-center gap-1">
+                <MapPin className="w-4 h-4 text-slate-900" /> Gurgaon, HR, India 122016
+              </span>
+              <span>•</span>
+              <a href="tel:+918802076664" className="inline-flex items-center gap-1 text-blue-700 hover:underline font-medium">
+                <Phone className="w-4 h-4" /> +91-8802076664
+              </a>
+              <span>•</span>
+              <a href="mailto:akashroshanchaurasia@gmail.com" className="inline-flex items-center gap-1 text-blue-700 hover:underline font-medium">
+                <Mail className="w-4 h-4" /> akashroshanchaurasia@gmail.com
+              </a>
             </div>
-            <p>{currentDate}</p>
+
+            <div className="flex flex-wrap gap-4 text-sm text-slate-700 font-mono">
+              <a href="https://www.linkedin.com/in/akash-roshan/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-700 hover:underline">
+                <Linkedin className="w-4 h-4" /> linkedin.com/in/akash-roshan
+              </a>
+              <span>•</span>
+              <a href="https://github.com/akash-roshan-chaurasia" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-700 hover:underline">
+                <Github className="w-4 h-4" /> github.com/akash-roshan-chaurasia
+              </a>
+            </div>
+
+            <p className="text-sm font-semibold pt-2 text-slate-800">{currentDate}</p>
           </div>
 
-          {/* Recipient Info - Left empty for customization */}
-          <div className="space-y-1">
-            <p>[Hiring Manager's Name]</p>
-            <p>[Company Name]</p>
-            <p>[Company Address]</p>
+          {/* Recipient Placeholder */}
+          <div className="space-y-1 text-sm font-medium text-slate-800">
+            <p>To: Executive Hiring Committee &amp; Engineering Leadership</p>
+            <p>Re: Technical Leadership / Engineering Manager / Director of Engineering Position</p>
           </div>
 
-          {/* Greeting */}
-          <p className="font-medium">Dear Hiring Manager,</p>
+          <p className="font-bold text-sm text-black">Dear Hiring Committee,</p>
 
           {/* Body Paragraphs */}
-          <div className="space-y-4 text-muted-foreground">
+          <div className="space-y-4 text-xs sm:text-sm leading-relaxed text-slate-900">
             <p>
-              I am writing to express my strong interest in the Engineering Manager position at your organization. With over {new Date().getFullYear() - 2019} years of experience in software development and my current role as a Team Lead 2 at AceCloud, I bring a proven track record of technical leadership, team management, and delivering complex software solutions.
+              I am writing to express my strong interest in technical leadership roles—including Engineering Manager, Director of Engineering, and CTO opportunities. With over 7 years of software development experience and my current leadership role as <strong>Team Lead 2 — Software Development at AceCloud (Real Time Data Services)</strong>, I bring a proven track record of supervising high-velocity engineering teams, establishing architectural standards, driving AI-integrated workflows, and executing production releases for cloud-native infrastructure.
             </p>
 
             <p>
-              In my current role, I lead multiple teams of developers and QA engineers, where I've successfully implemented agile methodologies, improved development processes, and delivered multiple high-impact projects. I have demonstrated my ability to balance strategic technical leadership with people management, ensuring both project success and team growth. My experience spans across modern technologies including Next.js, NestJS, Laravel, and cloud platforms, allowing me to provide architectural guidance while understanding the broader business context.
+              In my current role as Team Lead 2, I direct cross-functional developer and QA teams, managing sprint delivery, architectural code reviews, and release deployment pipelines. I have pioneered the adoption of <strong>AI-Driven Development workflows</strong> across my engineering unit, embedding AI coding assistants and automated prompt pipelines to significantly boost development throughput while maintaining clean, maintainable code standards.
             </p>
 
             <p>
-              What particularly draws me to your organization is your commitment to innovation and engineering excellence. I am confident that my experience in building and leading high-performing development teams, coupled with my technical expertise in cloud technologies and modern web development frameworks, makes me an ideal candidate for this role.
+              A key pillar of my leadership experience is engineering high-availability cloud infrastructure and business continuity. I architected enterprise Disaster Recovery offerings using <strong>Commvault best practices and NetApp Snapmirror integration</strong>, and built OpenStack volume Auto-Scaling and automated backup services. My technical background spans Next.js, NestJS, React Query, BullMQ, MySQL, MongoDB, Docker, and OpenStack environments.
             </p>
 
-            <p>
-              Key achievements in my leadership journey include:
+            <p className="font-bold text-black pt-1">
+              Core Technical Leadership &amp; Governance Highlights:
             </p>
 
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Successfully leading and mentoring multiple teams of 12+ developers and QA engineers</li>
-              <li>Implementing agile methodologies that improved team productivity by 30%</li>
-              <li>Driving strategic technical decisions and architecture for enterprise-scale applications</li>
-              <li>Reducing deployment issues by 50% through improved CI/CD practices</li>
-              <li>Managing stakeholder relationships and aligning technical solutions with business goals</li>
-              <li>Leading cross-functional initiatives and mentoring junior team leads</li>
+            <ul className="list-disc list-inside space-y-1.5 pl-2 font-medium">
+              <li><strong>Supervising Engineering Teams:</strong> Guiding developers and QA engineers, conducting architectural code reviews, and mentoring team members.</li>
+              <li><strong>AI-Driven Development Execution:</strong> Integrating AI tools and LLM workflows into team practices to increase speed, test coverage, and code quality.</li>
+              <li><strong>Release Management &amp; CI/CD Governance:</strong> Overseeing production release execution, deployment risk assessments, and zero-downtime release pipelines.</li>
+              <li><strong>Enterprise Cloud Architecture:</strong> Designing cloud-native disaster recovery, volume auto-scaling, and high-availability storage orchestration in OpenStack.</li>
+              <li><strong>Public Open-Source Contributions:</strong> Active contributor to OpenDev Gerrit (OpenStack Nova Bug #2161972 patch and code reviews) and Model Context Protocol (swagger-mcp PR #7).</li>
             </ul>
 
             <p>
-              I am particularly skilled at:
-            </p>
-
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Building and leading high-performing engineering teams</li>
-              <li>Implementing engineering best practices and processes</li>
-              <li>Managing complex technical projects from conception to delivery</li>
-              <li>Fostering a culture of innovation and continuous improvement</li>
-              <li>Balancing technical excellence with business objectives</li>
-            </ul>
-
-            <p>
-              I would welcome the opportunity to discuss how my leadership experience and technical expertise could benefit your engineering team. Thank you for considering my application. I look forward to the possibility of contributing to your organization's continued success.
+              I thrive at the intersection of technical strategy, team mentorship, and operational execution. I welcome the opportunity to discuss how my engineering leadership, AI workflow expertise, and cloud infrastructure experience can drive success for your organization.
             </p>
           </div>
 
           {/* Closing */}
-          <div className="space-y-2">
-            <p>Sincerely,</p>
-            <p className="font-semibold">Akash Roshan Chaurasia</p>
+          <div className="space-y-1 pt-4 text-sm">
+            <p className="font-medium text-slate-800">Sincerely,</p>
+            <p className="font-bold text-black text-base">Akash Roshan Chaurasia</p>
+            <p className="text-xs text-slate-600 font-mono">Team Lead 2 — Software Development</p>
           </div>
         </Card>
       </div>
