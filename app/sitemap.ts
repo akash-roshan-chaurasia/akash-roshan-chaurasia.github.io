@@ -4,7 +4,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://akashrc.github.io/Resume';
   return [
     {
-      url: baseUrl,
+      url: `${baseUrl}/`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/akash-roshan-chaurasia`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1.0,
