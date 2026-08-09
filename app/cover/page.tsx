@@ -131,7 +131,7 @@ export default function CoverLetter() {
             </p>
 
             <p>
-              A key pillar of my leadership experience is engineering high-availability cloud infrastructure and business continuity. I architected enterprise Disaster Recovery offerings using <strong>Commvault best practices and NetApp Snapmirror integration</strong>, and built OpenStack volume Auto-Scaling and automated backup services. My technical background spans Next.js, NestJS, React Query, BullMQ, MySQL, MongoDB, Docker, and OpenStack environments.
+              A key pillar of my leadership experience is engineering high-availability cloud infrastructure and business continuity. I architected enterprise Disaster Recovery offerings using <strong>Commvault best practices and NetApp Snapmirror integration</strong>, and built OpenStack volume Auto-Scaling and automated backup services. Furthermore, I am an active open-source contributor with 5 verified patches in OpenStack core repositories (Cinder &amp; Nova). My technical background spans Next.js, NestJS, React Query, BullMQ, MySQL, MongoDB, Docker, and OpenStack environments.
             </p>
 
             <p className="font-bold text-black pt-1">
@@ -143,7 +143,7 @@ export default function CoverLetter() {
               <li><strong>AI-Driven Development Execution:</strong> Integrating AI tools and LLM workflows into team practices to increase speed, test coverage, and code quality.</li>
               <li><strong>Release Management &amp; CI/CD Governance:</strong> Overseeing production release execution, deployment risk assessments, and zero-downtime release pipelines.</li>
               <li><strong>Enterprise Cloud Architecture:</strong> Designing cloud-native disaster recovery, volume auto-scaling, and high-availability storage orchestration in OpenStack.</li>
-              <li><strong>Public Open-Source Contributions:</strong> Active contributor to OpenDev Gerrit (OpenStack Nova Bug #2161972 patch and code reviews) and Model Context Protocol (swagger-mcp PR #7).</li>
+              <li><strong>Public Open-Source Contributions:</strong> Author of 5 verified OpenStack core patches across Cinder &amp; Nova (NetApp ONTAP LUN preservation, HTTP 409 backup conflict, Nova network cleanup retries Bug #2161972, ONTAP SSC refresh, and startup fail-fast) and Model Context Protocol (swagger-mcp PR #7).</li>
             </ul>
 
             <p>

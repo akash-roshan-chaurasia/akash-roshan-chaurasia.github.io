@@ -93,7 +93,7 @@ export default function ATSResume() {
               EXECUTIVE &amp; TECHNICAL LEADERSHIP SUMMARY
             </h2>
             <p className="text-xs sm:text-sm leading-relaxed text-slate-900">
-              Team Lead 2 at Real Time Data Services with {totalExperience} of progressive software engineering and technical leadership experience. Proven track record in leading developer and QA teams, implementing AI-driven development workflows, establishing architectural code reviews, executing zero-downtime production releases, and building high-availability cloud disaster recovery infrastructure. Proficient in Next.js, NestJS, React Query, MySQL, MongoDB, BullMQ, NetApp Snapmirror, Commvault, and OpenStack cloud environments.
+              Team Lead 2 at Real Time Data Services with {totalExperience} of progressive software engineering and technical leadership experience. Proven track record in leading developer and QA teams, implementing AI-driven development workflows, establishing architectural code reviews, executing zero-downtime production releases, and building high-availability cloud disaster recovery infrastructure. Author of 5 verified OpenStack core patches across Cinder &amp; Nova infrastructure. Proficient in Next.js, NestJS, React Query, MySQL, MongoDB, BullMQ, NetApp Snapmirror, Commvault, and OpenStack cloud environments.
             </p>
           </div>
 
@@ -113,13 +113,13 @@ export default function ATSResume() {
                 <span className="font-bold">Backend &amp; Microservices:</span> NestJS, Node.js, BullMQ, REST APIs, Webhooks, Asterisk PBX
               </div>
               <div>
-                <span className="font-bold">Cloud Native &amp; DR:</span> OpenStack Cloud, NetApp Snapmirror, Commvault Disaster Recovery, Docker, Sentry
+                <span className="font-bold">Cloud Native &amp; DR:</span> OpenStack Cloud (Cinder / Nova), NetApp Snapmirror &amp; ONTAP, Commvault Disaster Recovery, Docker, Sentry
               </div>
               <div>
                 <span className="font-bold">Databases &amp; Storage:</span> MySQL, MongoDB, Volume Auto-Scaling, Automated Backups
               </div>
               <div>
-                <span className="font-bold">Open Source:</span> OpenDev Gerrit Code Reviews &amp; Patches (OpenStack Nova), Model Context Protocol (swagger-mcp PR #7)
+                <span className="font-bold">Open Source Evidence:</span> 5 OpenStack Core Patches (Cinder &amp; Nova on OpenDev Gerrit), Model Context Protocol (swagger-mcp PR #7)
               </div>
             </div>
           </div>
@@ -218,10 +218,10 @@ export default function ATSResume() {
             <h2 className="text-base font-bold text-black border-b border-black pb-1 uppercase tracking-wide">
               PUBLIC OPEN SOURCE CONTRIBUTIONS
             </h2>
-            <ul className="text-xs sm:text-sm space-y-1 text-slate-900">
-              <li><strong className="font-bold">OpenDev Gerrit (OpenStack Nova):</strong> Authored patch &quot;Retry and record fault on network cleanup failure&quot; (Bug #2161972) handling Neutron port retries. Participated in Gerrit code reviews.</li>
+            <ul className="text-xs sm:text-sm space-y-1 text-slate-900 leading-relaxed">
+              <li><strong className="font-bold">OpenDev Gerrit (5 Verified OpenStack Patches):</strong> Authored 5 patches across OpenStack Cinder &amp; Nova: 1) NetApp ONTAP LUN name preservation, 2) HTTP 409 backup conflict handling, 3) Nova network cleanup retries (Bug #2161972), 4) NetApp ONTAP SSC refresh interval, 5) Invalid host startup fail-fast.</li>
               <li><strong className="font-bold">GitHub (swagger-mcp):</strong> Merged Pull Request #7 (&quot;swaggerV3Support&quot;) adding OpenAPI 3.0 support to Model Context Protocol (MCP) server repository.</li>
-              <li><strong className="font-bold">npm Registry:</strong> Maintainer profile (~akash_roshan) for open-source Node.js package distribution.</li>
+              <li><strong className="font-bold">npm Registry:</strong> Verified maintainer profile (~akash_roshan) for open-source Node.js package distribution.</li>
             </ul>
           </div>
         </div>

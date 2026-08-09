@@ -80,7 +80,7 @@ export default function Home() {
     }
   };
 
-  // Categorized Technical Skills (Modern Stack - PHP/Laravel/WHMCS removed as requested)
+  // Categorized Technical Skills
   const skillCategories = [
     {
       title: "Frontend Architecture & UI",
@@ -107,12 +107,12 @@ export default function Home() {
     {
       title: "Cloud Native & DR Infrastructure",
       skills: [
-        { name: "OpenStack Cloud Infrastructure", exp: "4 years" },
+        { name: "OpenStack Cloud (Cinder / Nova)", exp: "4 years" },
         { name: "Commvault Disaster Recovery", exp: "2 years" },
-        { name: "NetApp Snapmirror", exp: "2 years" },
+        { name: "NetApp Snapmirror / ONTAP", exp: "2 years" },
         { name: "Docker Containerization", exp: "7 years" },
         { name: "Sentry Error Tracking", exp: "4 years" },
-        { name: "AI-Driven Dev Tools & LLM Workflows", exp: "2 years" },
+        { name: "AI-Driven Dev Tools & Workflows", exp: "2 years" },
       ],
     },
     {
@@ -195,18 +195,18 @@ export default function Home() {
     },
   ];
 
-  // Verified Open Source Contributions (Expanded OpenDev + Fixed npm)
+  // Verified Open Source Contributions (All 5 OpenStack Patches Included)
   const openSourceItems: OpenSourceItem[] = [
     {
       platform: "OpenDev",
-      title: "OpenDev / OpenStack Infrastructure Contributions",
-      subtitle: "Gerrit Code Reviewer & Uploader • OpenStack Infrastructure",
-      verifiedDetails: "Authored patch: 'Retry and record fault on network cleanup failure' (OpenStack Nova Bug #2161972) handling Neutron port deletion retries during instance build/reschedule. Participated in OpenDev Gerrit reviews.",
-      context: "Public open-source infrastructure contributions through code review and patches on OpenDev Gerrit, enhancing Nova compute resilience and network fault recovery.",
-      technologies: ["OpenStack Nova", "Python", "Neutron Networking", "Gerrit Code Review"],
+      title: "OpenStack Core Infrastructure Patches (Cinder & Nova)",
+      subtitle: "5 Verified OpenStack Patches • OpenDev Gerrit Code Reviews",
+      verifiedDetails: "Authored 5 key OpenStack patches: 1) Cinder NetApp ONTAP LUN name preservation, 2) Cinder backup HTTP 409 conflict handling, 3) Nova network cleanup failure retries (Bug #2161972), 4) Cinder NetApp ONTAP SSC refresh interval, 5) Cinder invalid host startup fail-fast.",
+      context: "Public open-source infrastructure contributions enhancing OpenStack block storage (Cinder) and compute (Nova) reliability, NetApp ONTAP driver features, and fault isolation.",
+      technologies: ["OpenStack Cinder", "OpenStack Nova", "Python", "NetApp ONTAP", "Gerrit Code Review"],
       linkUrl: "https://review.opendev.org/q/owner:akashroshanchaurasia@gmail.com",
-      linkText: "View OpenDev Contributions",
-      statusBadge: "Verified Patches",
+      linkText: "View All 5 OpenDev Patches",
+      statusBadge: "5 OpenStack Patches",
     },
     {
       platform: "GitHub",
@@ -221,10 +221,10 @@ export default function Home() {
     },
     {
       platform: "npm",
-      title: "Open Source npm Profile",
-      subtitle: "npm Account: ~akash_roshan",
-      verifiedDetails: "Public open-source developer profile on npm (~akash_roshan) for JavaScript/Node.js package management and ecosystem contributions.",
-      context: "Participates in the broader JavaScript package ecosystem through public npm profile tracking and open-source Node module distribution.",
+      title: "Open Source npm Developer Profile",
+      subtitle: "npm Developer Account: ~akash_roshan",
+      verifiedDetails: "Verified public open-source developer profile (~akash_roshan) on the official npm registry.",
+      context: "Participates in the broader JavaScript package ecosystem through open-source profile tracking and Node.js module distribution.",
       technologies: ["Node.js", "npm Registry", "JavaScript Modules"],
       linkUrl: "https://www.npmjs.com/~akash_roshan",
       linkText: "View npm Profile",
@@ -257,7 +257,7 @@ export default function Home() {
 
               {/* Main Headline */}
               <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-100 leading-tight">
-                Architecting <span className="gradient-text">Resilient Cloud Infrastructure</span> & Leading High-Scale Engineering Teams
+                Architecting <span className="gradient-text">Resilient Cloud Infrastructure</span> &amp; Leading High-Scale Engineering Teams
               </h1>
 
               {/* Subheading */}
@@ -268,13 +268,13 @@ export default function Home() {
               {/* Leadership Capability Badges */}
               <div className="flex flex-wrap gap-2 text-xs font-mono">
                 <span className="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 flex items-center gap-1.5">
-                  <Users className="w-3.5 h-3.5 text-cyan-400" /> Team Leadership & Mentorship
+                  <Users className="w-3.5 h-3.5 text-cyan-400" /> Team Leadership &amp; Mentorship
                 </span>
                 <span className="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5 text-amber-400" /> AI-Driven Development
                 </span>
                 <span className="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 flex items-center gap-1.5">
-                  <GitBranch className="w-3.5 h-3.5 text-emerald-400" /> Code Reviews & Release Execution
+                  <GitBranch className="w-3.5 h-3.5 text-emerald-400" /> Code Reviews &amp; Release Execution
                 </span>
               </div>
 
@@ -359,26 +359,29 @@ export default function Home() {
                     &quot;Release Execution &amp; CI/CD Governance&quot;,
                   </div>
                   <div className="pl-8 text-cyan-300">
-                    &quot;Disaster Recovery &amp; Cloud Systems&quot;
+                    &quot;Disaster Recovery &amp; Cloud Infrastructure&quot;
                   </div>
                   <div className="pl-4">],</div>
                   <div className="pl-4">
-                    primaryStack: [
+                    openSource: {"{"}
                   </div>
-                  <div className="pl-8 text-cyan-300">
-                    &quot;Next.js&quot;, &quot;NestJS&quot;, &quot;OpenStack&quot;, &quot;Commvault&quot;,
+                  <div className="pl-8">
+                    openDev: <span className="text-emerald-300">&quot;5 OpenStack Patches (Cinder &amp; Nova)&quot;</span>,
                   </div>
-                  <div className="pl-8 text-cyan-300">
-                    &quot;NetApp Snapmirror&quot;, &quot;BullMQ&quot;, &quot;MySQL&quot;, &quot;MongoDB&quot;
+                  <div className="pl-8">
+                    swaggerMCP: <span className="text-emerald-300">&quot;PR #7 (OpenAPI 3.0 Support)&quot;</span>,
                   </div>
-                  <div className="pl-4">]</div>
+                  <div className="pl-8">
+                    npm: <span className="text-emerald-300">&quot;~akash_roshan Profile&quot;</span>
+                  </div>
+                  <div className="pl-4">{"}"}</div>
                   <div>{"}"};</div>
                 </div>
 
                 {/* Footer Status Pill */}
                 <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
                   <span className="flex items-center gap-1.5 text-emerald-400">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> Ready for Engineering Management &amp; Director Roles
+                    <CheckCircle2 className="w-3.5 h-3.5" /> Ready for Engineering Leadership Roles
                   </span>
                   <span>Gurgaon, HR, India</span>
                 </div>
@@ -506,7 +509,7 @@ export default function Home() {
                 </div>
 
                 <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 leading-relaxed">
-                  <li><strong className="text-slate-100">Team Management &amp; Technical Guidance:</strong> Leading and supervising a cross-functional team of software developers and QA engineers, establishing strategic project goals, mentorship pipelines, and delivery schedules.</li>
+                  <li><strong className="text-slate-100">Team Management &amp; Leadership:</strong> Supervising and leading a cross-functional team of software developers and QA engineers, providing technical direction, architectural guidance, sprint planning, and mentorship.</li>
                   <li><strong className="text-slate-100">AI-Driven Development Workflows:</strong> Driving AI-assisted development practices, automated prompt workflows, and AI coding tools across the engineering team to accelerate sprint velocity and code quality.</li>
                   <li><strong className="text-slate-100">Code Reviews &amp; Quality Governance:</strong> Enforcing strict peer code reviews, architectural guidelines, static analysis checks, and technical debt remediation to maintain high system reliability.</li>
                   <li><strong className="text-slate-100">Executing Releases &amp; CI/CD Pipelines:</strong> Managing end-to-end production release execution, deployment workflows, risk assessments, and zero-downtime deployment pipelines.</li>
@@ -535,7 +538,7 @@ export default function Home() {
                 </div>
 
                 <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 leading-relaxed">
-                  <li>Supervised developer team, conducted architectural code reviews, and resolved complex production environment challenges.</li>
+                  <li>Guided developer teams, performed code reviews, and resolved complex production environment challenges.</li>
                   <li>Engineered Auto Scaling and Volume Backup integration services for cloud instances in OpenStack.</li>
                   <li>Formulated customer Disaster Recovery architecture using Commvault deployment best practices.</li>
                   <li>Utilized Next.js, NestJS, React Query, MySQL, MongoDB, Sentry, and OpenStack.</li>
@@ -625,7 +628,7 @@ export default function Home() {
           </div>
 
           <p className="text-slate-300 text-sm max-w-3xl leading-relaxed">
-            Active participant in public software ecosystems, contributing code patches and reviews to OpenStack Nova via OpenDev Gerrit, enhancing Model Context Protocol tools on GitHub, and maintaining open-source developer profiles.
+            Active participant in public software ecosystems, contributing 5 verified code patches and reviews to OpenStack Cinder &amp; Nova via OpenDev Gerrit, enhancing Model Context Protocol tools on GitHub, and maintaining open-source developer profiles.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -667,7 +670,7 @@ export default function Home() {
               <Github className="w-4 h-4" /> GitHub: akash-roshan-chaurasia
             </a>
             <a href="https://review.opendev.org/q/owner:akashroshanchaurasia@gmail.com" target="_blank" rel="noopener noreferrer" className="px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-slate-200 hover:text-cyan-300 flex items-center gap-2 transition-colors">
-              <GitBranch className="w-4 h-4 text-amber-400" /> OpenDev Gerrit Profile
+              <GitBranch className="w-4 h-4 text-amber-400" /> OpenDev Gerrit Profile (5 OpenStack Patches)
             </a>
             <a href="https://www.npmjs.com/~akash_roshan" target="_blank" rel="noopener noreferrer" className="px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-slate-200 hover:text-cyan-300 flex items-center gap-2 transition-colors">
               <Code className="w-4 h-4 text-rose-400" /> npm Profile (~akash_roshan)
