@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://akashrc.github.io/Resume/sitemap.xml',
+    sitemap: 'https://akash-roshan-chaurasia.github.io/sitemap.xml',
   };
 }

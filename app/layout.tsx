@@ -24,14 +24,14 @@ export const metadata: Metadata = {
   authors: [{ name: 'Akash Roshan Chaurasia', url: 'https://github.com/akashrc' }],
   creator: 'Akash Roshan Chaurasia',
   publisher: 'Akash Roshan Chaurasia',
-  metadataBase: new URL('https://akashrc.github.io/Resume/'),
+  metadataBase: new URL('https://akash-roshan-chaurasia.github.io/'),
   alternates: {
-    canonical: 'https://akashrc.github.io/Resume/akash-roshan-chaurasia',
+    canonical: 'https://akash-roshan-chaurasia.github.io/',
   },
   openGraph: {
     type: 'profile',
     locale: 'en_US',
-    url: 'https://akashrc.github.io/Resume/akash-roshan-chaurasia',
+    url: 'https://akash-roshan-chaurasia.github.io/',
     title: 'Akash Roshan Chaurasia — Senior Software Engineer & Team Lead 2',
     description: 'Senior Software Engineer & Team Lead 2 with 7+ years of experience building high-availability cloud infrastructure, disaster recovery automation, Next.js, NestJS, and Open Source systems.',
     siteName: 'Akash Roshan Chaurasia Portfolio',
@@ -59,7 +59,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://akashrc.github.io/Resume/akash-roshan-chaurasia#person",
+      "@id": "https://akash-roshan-chaurasia.github.io/#person",
       "name": "Akash Roshan Chaurasia",
       "jobTitle": "Team Lead 2 - Software Development",
       "worksFor": {
@@ -73,8 +73,9 @@ const jsonLd = {
         "addressLocality": "Gurgaon",
         "addressCountry": "India"
       },
-      "url": "https://akashrc.github.io/Resume/akash-roshan-chaurasia",
+      "url": "https://akash-roshan-chaurasia.github.io/",
       "sameAs": [
+        "https://github.com/akash-roshan-chaurasia",
         "https://github.com/akashrc",
         "https://www.linkedin.com/in/akash-roshan/",
         "https://review.opendev.org/q/owner:akashroshanchaurasia@gmail.com",
@@ -101,20 +102,20 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://akashrc.github.io/Resume/akash-roshan-chaurasia#website",
-      "url": "https://akashrc.github.io/Resume/akash-roshan-chaurasia",
+      "@id": "https://akash-roshan-chaurasia.github.io/#website",
+      "url": "https://akash-roshan-chaurasia.github.io/",
       "name": "Akash Roshan Chaurasia Portfolio",
       "publisher": {
-        "@id": "https://akashrc.github.io/Resume/akash-roshan-chaurasia#person"
+        "@id": "https://akash-roshan-chaurasia.github.io/#person"
       }
     },
     {
       "@type": "ProfilePage",
-      "@id": "https://akashrc.github.io/Resume/akash-roshan-chaurasia#webpage",
-      "url": "https://akashrc.github.io/Resume/akash-roshan-chaurasia",
+      "@id": "https://akash-roshan-chaurasia.github.io/#webpage",
+      "url": "https://akash-roshan-chaurasia.github.io/",
       "name": "Akash Roshan Chaurasia — Senior Software Engineer & Team Lead 2",
       "mainEntity": {
-        "@id": "https://akashrc.github.io/Resume/akash-roshan-chaurasia#person"
+        "@id": "https://akash-roshan-chaurasia.github.io/#person"
       }
     }
   ]
