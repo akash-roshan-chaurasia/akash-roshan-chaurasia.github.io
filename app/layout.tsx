@@ -4,23 +4,33 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: 'Akash Roshan Chaurasia — Team Lead 2 (Software Development)',
-  description: 'Team Lead 2 - Software Development with 7+ years of experience leading engineering teams, AI-driven development workflows, release execution, high-availability cloud infrastructure, and disaster recovery automation.',
+  title: 'Akash Roshan Chaurasia — Team Lead 2 | Cloud Platform & Backend Engineering',
+  description: 'Team Lead 2 and hands-on engineering leader with ~7.5 years experience building cloud platform products and backend systems on top of OpenStack APIs, Node.js/NestJS microservices, Disaster Recovery (Commvault + NetApp), and cloud automation.',
   keywords: [
     'Akash Roshan Chaurasia',
     'Akash Chaurasia',
     'Team Lead 2',
-    'Software Development Team Lead',
-    'Engineering Manager',
+    'Cloud Platform Product Engineering',
+    'Cloud Platform Engineer',
+    'Backend Engineering Lead',
+    'Staff Backend Engineer',
+    'Node.js',
+    'NestJS',
+    'TypeScript',
+    'OpenStack APIs',
+    'Cloud Automation',
+    'Disaster Recovery',
+    'Commvault',
+    'NetApp SnapMirror',
+    'Heat Autoscaling',
+    'Smart GPU Flavor Scheduling',
+    'BullMQ',
+    'Microservices',
     'Technical Leadership',
-    'AI Driven Development',
+    'Engineering Manager',
     'Release Management',
-    'Next.js Developer',
-    'NestJS Developer',
-    'Disaster Recovery Automation',
-    'OpenStack',
-    'OpenDev Gerrit Contributor',
-    'Gurgaon Software Engineer'
+    'Gurgaon Software Engineer',
+    'OpenDev Gerrit Contributor'
   ],
   authors: [{ name: 'Akash Roshan Chaurasia', url: 'https://github.com/akash-roshan-chaurasia' }],
   creator: 'Akash Roshan Chaurasia',
@@ -33,14 +43,14 @@ export const metadata: Metadata = {
     type: 'profile',
     locale: 'en_US',
     url: 'https://akash-roshan-chaurasia.github.io/',
-    title: 'Akash Roshan Chaurasia — Team Lead 2 (Software Development)',
-    description: 'Team Lead 2 - Software Development with 7+ years of experience leading engineering teams, AI-driven development workflows, release execution, high-availability cloud infrastructure, and disaster recovery automation.',
+    title: 'Akash Roshan Chaurasia — Team Lead 2 | Cloud Platform & Backend Engineering',
+    description: 'Team Lead 2 and hands-on engineering leader with ~7.5 years experience building cloud platform products and backend systems on top of OpenStack APIs, Node.js/NestJS microservices, Disaster Recovery (Commvault + NetApp), and cloud automation.',
     siteName: 'Akash Roshan Chaurasia Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Akash Roshan Chaurasia — Team Lead 2 (Software Development)',
-    description: 'Team Lead 2 - Software Development with 7+ years of experience leading engineering teams, AI-driven development workflows, release execution, high-availability cloud infrastructure, and disaster recovery automation.',
+    title: 'Akash Roshan Chaurasia — Team Lead 2 | Cloud Platform & Backend Engineering',
+    description: 'Team Lead 2 and hands-on engineering leader with ~7.5 years experience building cloud platform products and backend systems on top of OpenStack APIs, Node.js/NestJS microservices, Disaster Recovery (Commvault + NetApp), and cloud automation.',
   },
   robots: {
     index: true,
@@ -62,7 +72,7 @@ const jsonLd = {
       "@type": "Person",
       "@id": "https://akash-roshan-chaurasia.github.io/#person",
       "name": "Akash Roshan Chaurasia",
-      "jobTitle": "Team Lead 2 - Software Development",
+      "jobTitle": "Team Lead 2 — Software Development (Cloud Platform & Backend Engineering)",
       "worksFor": {
         "@type": "Organization",
         "name": "AceCloud | Real Time Data Services"
@@ -82,25 +92,27 @@ const jsonLd = {
         "https://www.npmjs.com/~akash_roshan"
       ],
       "knowsAbout": [
-        "Engineering Management",
-        "Software Development Leadership",
-        "AI-Driven Development Workflows",
-        "Code Reviews & Quality Standards",
-        "Release Execution & Management",
-        "Next.js",
-        "NestJS",
-        "React",
+        "Cloud Platform Product Engineering",
+        "OpenStack APIs (Nova, Cinder, Heat)",
+        "Backend Architecture & Microservices",
         "Node.js",
-        "Cloud Architecture",
-        "Disaster Recovery",
-        "OpenStack",
+        "NestJS",
+        "TypeScript",
+        "Next.js",
+        "React",
+        "Disaster Recovery Orchestration",
         "Commvault",
-        "NetApp Snapmirror",
+        "NetApp SnapMirror & ONTAP",
         "BullMQ",
+        "Cloud Automation & Heat Stacks",
+        "Smart GPU Flavor Scheduling",
         "MySQL",
         "MongoDB",
         "Docker",
-        "Model Context Protocol"
+        "Technical Leadership & Mentorship",
+        "Engineering Hiring & Technical Interviewing",
+        "Release Execution & Zero-Downtime Deployments",
+        "Model Context Protocol & OpenAPI"
       ]
     },
     {
@@ -116,7 +128,7 @@ const jsonLd = {
       "@type": "ProfilePage",
       "@id": "https://akash-roshan-chaurasia.github.io/#webpage",
       "url": "https://akash-roshan-chaurasia.github.io/",
-      "name": "Akash Roshan Chaurasia — Team Lead 2 (Software Development)",
+      "name": "Akash Roshan Chaurasia — Team Lead 2 | Cloud Platform & Backend Engineering",
       "mainEntity": {
         "@id": "https://akash-roshan-chaurasia.github.io/#person"
       }

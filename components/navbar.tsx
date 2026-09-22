@@ -34,11 +34,14 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Experience", href: "#experience" },
-    { label: "Projects", href: "#projects" },
+    { label: "Summary", href: "#summary" },
+    { label: "Expertise", href: "#expertise" },
+    { label: "Current Role", href: "#current-role" },
+    { label: "Platform & DR", href: "#platform" },
+    { label: "Autoscaling", href: "#autoscaling" },
     { label: "Open Source", href: "#open-source" },
+    { label: "Leadership", href: "#leadership" },
+    { label: "Stack", href: "#tech-stack" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -64,19 +67,19 @@ export function Navbar() {
               Akash Roshan <span className="text-cyan-400">Chaurasia</span>
             </span>
             <span className="text-[10px] text-slate-400 font-mono tracking-wider uppercase">
-              Team Lead 2 • Software Development
+              Team Lead 2 • Cloud Platform &amp; Backend
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation Links */}
         {pathname === "/" && (
-          <nav className="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/60 backdrop-blur-md">
+          <nav className="hidden lg:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/60 backdrop-blur-md">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-full transition-colors"
+                className="px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-full transition-colors"
               >
                 {link.label}
               </a>
