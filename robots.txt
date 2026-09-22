@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://akash-roshan-chaurasia.github.io/sitemap.xml
